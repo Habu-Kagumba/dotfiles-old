@@ -1,0 +1,19 @@
+" Undo config
+if has('persistent_undo')
+	set undofile
+endif
+
+set undodir=$HOME/.VIM_UNDO_FILES
+
+set undolevels=5000
+
+" Matchpairs
+set matchpairs+=<:>,=:;
+
+" Paste
+nnoremap <F5> :set invpaste paste?<CR>
+nmap <silent> <BS> :nohlsearch<CR>
+set pastetoggle=<F5>
+
+" remap completion
+inoremap <leader>, <C-x><C-p>

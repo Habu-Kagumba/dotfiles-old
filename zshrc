@@ -1,8 +1,17 @@
-# Explicitly configured $PATH variable
-PATH=/usr/local/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/local/bin:/opt/local/sbin:/usr/X11/bin
+# RVM
+[[ -s "/home/$USER/.rvm/scripts/rvm" ]] && source "/home/$USER/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+[[ -s "/home/$USER/.nvm" ]] && . "/home/$USER/.nvm/nvm.sh"
 
+# Explicitly configured $PATH variable
+PATH=$PATH:/home/herbert/.rvm/gems/ruby-2.2.1/bin:/usr/local/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/local/bin:/opt/local/sbin:/usr/X11/bin:/home/herbert/.nvm/v0.25.4/bin
+PATH=$PATH:/usr/local/go/bin:$PATH:/home/$USER/.nvm/v0.25.4/bin:/home/$USER/mongodb/bin
+source ~/.nvm/nvm.sh
+if [[ $COLORTERM == "gnome-terminal" ]]; then
+            export TERM="xterm-256color"
+fi
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -48,7 +57,7 @@ alias ga='git add '
 alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
-alias go='git checkout '
+# alias go='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
 alias got='git '
@@ -76,3 +85,7 @@ qfind () {
 if [ -f /usr/bin/vim ]; then
   export EDITOR=/usr/bin/vim
 fi
+#
+export WORKON_HOME=~/Env
+source /usr/local/bin/virtualenvwrapper.sh
+

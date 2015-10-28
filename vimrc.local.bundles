@@ -1,0 +1,5 @@
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundle 'shime/vim-livedown'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'ternjs/tern_for_vim'

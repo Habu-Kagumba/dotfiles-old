@@ -50,3 +50,20 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " spell check ish
 nnoremap <F12> :setlocal spell<CR>
+
+" jsx files syntax highliting
+let g:sx_ext_required = 0
+
+" syntastic
+let g:syntastic_javascript_checkers=['eslint']
+
+" Example setting checker for specific project
+
+" autocmd BufNewFile,BufReadPre *.js   let b:syntastic_checkers =
+"     \ expand('<amatch>') =~# '^/path/to/project1/' ? ['eslint'] :
+"     \ expand('<amatch>') =~# '^/path/to/project2/' ? ['jshint'] :
+"     \     ['standard']
+
+" OR
+
+" autocmd BufNewFile,BufReadPre /path/to/project2/**/*.js  let b:syntastic_checkers = ['jshint']

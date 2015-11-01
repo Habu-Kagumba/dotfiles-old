@@ -1,3 +1,5 @@
+source $HOME/.bash_aliases
+
 # RVM
 [[ -s "/home/$USER/.rvm/scripts/rvm" ]] && source "/home/$USER/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 [[ -s "/home/$USER/.nvm" ]] && . "/home/$USER/.nvm/nvm.sh"
@@ -86,6 +88,6 @@ if [ -f /usr/bin/vim ]; then
   export EDITOR=/usr/bin/vim
 fi
 #
-export WORKON_HOME=~/Env
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=~/Env
+# source /usr/local/bin/virtualenvwrapper.sh
 

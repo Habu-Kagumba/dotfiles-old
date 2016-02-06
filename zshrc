@@ -6,7 +6,12 @@ source $HOME/.bash_aliases
 
 # Explicitly configured $PATH variable
 PATH=$PATH:/home/herbert/.rvm/gems/ruby-2.2.1/bin:/usr/local/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/local/bin:/opt/local/sbin:/usr/X11/bin:/home/herbert/.nvm/v0.25.4/bin
-PATH=$PATH:/usr/local/go/bin:$PATH:/home/$USER/.nvm/v0.25.4/bin:/home/$USER/mongodb/bin
+PATH=$PATH:/usr/local/go/bin:$PATH:/home/$USER/.nvm/v0.25.4/bin:/home/$USER/mongodb/bin:$PATH:/home/$USER/Packages/android-sdk-linux/platform-tools:$PATH:/home/$USER/Packages/android-sdk-linux/tools:/home/herbert/Packages/google_appengine/
+# Gradle
+if [[ -d "$HOME/Packages/gradle-2.2.1" ]]; then
+    export GRADLE_HOME="$HOME/Packages/gradle-2.2.1"
+    PATH="$PATH:$GRADLE_HOME/bin"
+fi
 source ~/.nvm/nvm.sh
 if [[ $COLORTERM == "gnome-terminal" ]]; then
             export TERM="xterm-256color"
@@ -91,3 +96,6 @@ fi
 # export WORKON_HOME=~/Env
 # source /usr/local/bin/virtualenvwrapper.sh
 
+
+# added by travis gem
+[ -f /home/herbert/.travis/travis.sh ] && source /home/herbert/.travis/travis.sh

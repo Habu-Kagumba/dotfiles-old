@@ -37,3 +37,6 @@ export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# added by travis gem
+[ -f /home/herbert/.travis/travis.sh ] && source /home/herbert/.travis/travis.sh

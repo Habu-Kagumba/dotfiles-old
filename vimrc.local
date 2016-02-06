@@ -22,10 +22,8 @@ inoremap <leader>, <C-x><C-p>
 set wildignore+=lib,node_modules,bower_components,env,public
 
 " custom indentation for filetypes
-autocmd FileType scss setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType sass setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
-autocmd bufwritepost *.js silent !standard % --format
-set autoread
 
 set expandtab sw=4 ts=4 ai
 
@@ -68,3 +66,26 @@ let g:syntastic_javascript_checkers=['standard']
 " OR
 
 " autocmd BufNewFile,BufReadPre /path/to/project2/**/*.js  let b:syntastic_checkers = ['jshint']
+
+" enable code folding for javascript
+let javascript_enable_domhtmlcss = 1
+
+" optiona YCM config
+" These are the tweaks I apply to YCM's config, you don't need them but they might help.
+" YCM gives you popups and splits by default that some people might not like, so these should tidy it up a bit for you.
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+set completeopt-=preview
+
+" Syntastic quickfix window setting
+let g:syntastic_loc_list_height=2
+
+" add shebang info to files
+augroup Shebang
+  autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
+  autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
+  autocmd BufNewFile *.tex 0put =\"%&plain\<nl>\"|$
+  autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
+augroup END

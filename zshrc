@@ -1,19 +1,15 @@
 source $HOME/.bash_aliases
 
 # RVM
-[[ -s "/home/$USER/.rvm/scripts/rvm" ]] && source "/home/$USER/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-[[ -s "/home/$USER/.nvm" ]] && . "/home/$USER/.nvm/nvm.sh"
+eval "$(rbenv init -)"
 
 # Explicitly configured $PATH variable
-PATH=$PATH:/home/herbert/.rvm/gems/ruby-2.2.1/bin:/usr/local/git/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/local/bin:/opt/local/sbin:/usr/X11/bin:/home/herbert/.nvm/v0.25.4/bin
-PATH=$PATH:/usr/local/go/bin:$PATH:/home/$USER/.nvm/v0.25.4/bin:/home/$USER/mongodb/bin:$PATH:/home/$USER/Packages/android-sdk-linux/platform-tools:$PATH:/home/$USER/Packages/android-sdk-linux/tools:/home/herbert/Packages/google_appengine/
-export ANDROID_HOME=/home/herbert/Packages/android-sdk-linux
+export ANDROID_HOME=/Users/habu/Library/Android/sdk
 # Gradle
-if [[ -d "$HOME/Packages/gradle-2.2.1" ]]; then
-    export GRADLE_HOME="$HOME/Packages/gradle-2.2.1"
+if [[ -d "$HOME/Packages/gradle-2.11" ]]; then
+    export GRADLE_HOME="$HOME/Packages/gradle-2.11"
     PATH="$PATH:$GRADLE_HOME/bin"
 fi
-source ~/.nvm/nvm.sh
 if [[ $COLORTERM == "gnome-terminal" ]]; then
             export TERM="xterm-256color"
 fi

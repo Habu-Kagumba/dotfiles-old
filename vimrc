@@ -86,7 +86,7 @@ NeoBundle "davidhalter/jedi-vim"
 NeoBundle "Yggdroot/indentLine"
 
 "" Javascript Bundle
-NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'othree/yajs.vim'
 
 "" Ruby Bundle
 NeoBundle "tpope/vim-rails"

@@ -92,10 +92,10 @@ augroup Shebang
 augroup END
 
 " run file terminal
-:map <leader>r :!ruby %<cr>
+:map <leader>r :!clear; ruby %<cr>
 
 " Customise vim-rspec command
-let g:rspec_command = "!rspec -c -f d {spec}"
+let g:rspec_command = "!clear; rspec -c -f d {spec}"
 
 " enable mouse scrolling
 set mouse=a

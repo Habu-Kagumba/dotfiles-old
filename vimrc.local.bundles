@@ -4,6 +4,7 @@ NeoBundle 'mxw/vim-jsx'
 NeoBundle 'pbrisbin/vim-mkdir'
 NeoBundle 'mitsuhiko/jinja2'
 NeoBundle 'Valloric/YouCompleteMe'
+" kinda-like delimitmate
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'othree/es.next.syntax.vim'

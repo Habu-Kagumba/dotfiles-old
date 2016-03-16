@@ -31,6 +31,13 @@ for file in $files; do
 done
 
 install_zsh () {
+# install tmux plugins
+if [[ ! -d $dir/tmux-battery/ ]]; then
+    git clone http://github.com/tmux-plugins/tmux-battery.git
+fi
+if [[ ! -d $dir/tmux-online-status/ ]]; then
+    git clone http://github.com/tmux-plugins/tmux-online-status.git
+fi
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # Clone my oh-my-zsh repository from GitHub only if it isn't already present

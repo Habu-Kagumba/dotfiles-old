@@ -20,7 +20,7 @@ set pastetoggle=<F5>
 inoremap <leader>, <C-x><C-p>
 
 " additional wildignore
-set wildignore+=lib,node_modules,bower_components,env,public
+set wildignore+=node_modules,bower_components,env,public
 
 " custom indentation for filetypes
 autocmd FileType sass setlocal expandtab shiftwidth=2 tabstop=2

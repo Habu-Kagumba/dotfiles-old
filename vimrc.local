@@ -104,3 +104,12 @@ set mouse=a
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tmuxline#enabled = 0
 
+" tree command.
+function! GetTree()
+    call inputsave()
+    let params = input('Ignore -I, Pattern -P (sep => |):')
+    call inputrestore()
+    execute "!clear; tree ".params
+endfunction
+:nnoremap <leader>tree :call GetTree()<cr>
+

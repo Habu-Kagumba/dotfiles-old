@@ -107,7 +107,7 @@ let g:airline#extensions#tmuxline#enabled = 0
 " tree command.
 function! GetTree()
     call inputsave()
-    let params = input('Ignore -I, Pattern -P (sep => |):')
+    let params = input('Ignore -I, Pattern -P, Hidden -a (sep => |):')
     call inputrestore()
     execute "!clear; tree ".params
 endfunction

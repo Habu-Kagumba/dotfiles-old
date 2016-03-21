@@ -64,8 +64,6 @@ alias gd='git diff'
 # alias go='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
-alias got='git '
-alias get='git '
 
 ## Vagrant Aliases
 alias vag='vagrant'

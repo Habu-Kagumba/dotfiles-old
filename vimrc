@@ -417,7 +417,7 @@ noremap <leader>w :bn<CR>
 noremap <leader>c :bd<CR>
 
 "" Clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
+nmap <silent> <BS> :nohlsearch<CR>
 
 "" Switching windows
 noremap <C-j> <C-w>j

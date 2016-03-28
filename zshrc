@@ -6,6 +6,7 @@ eval "$(rbenv init -)"
 # Explicitly configured $PATH variable
 export ANDROID_HOME=/Users/habu/Library/Android/sdk
 export HOMEBREW_GITHUB_API_TOKEN=1eb889d8ba1eea1e979e25dbdf7d56f63e1bb89d
+export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 # Gradle
 if [[ -d "$HOME/Packages/gradle-2.11" ]]; then
     export GRADLE_HOME="$HOME/Packages/gradle-2.11"
@@ -62,12 +63,6 @@ qfind () {
   return 0
 }
 
-# Custom exports
-## Set EDITOR to /usr/bin/vim if Vim is installed
-if [ -f /usr/bin/vim ]; then
-  export EDITOR=/usr/bin/vim
-fi
-#
 # export WORKON_HOME=~/Env
 # source /usr/local/bin/virtualenvwrapper.sh
 
@@ -77,3 +72,11 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+## Add tmux alias here
+alias tm='tmux new-session -s "$(basename "$PWD")"'
+alias tma='tmux attach-session -t "$(basename "$PWD")"'
+alias tmd='tmux detach'
+alias tml='tmux ls'
+alias tmk='tmux kill-session'
+

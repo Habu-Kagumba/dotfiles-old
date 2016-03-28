@@ -13,7 +13,6 @@ set matchpairs+=<:>,=:;
 " Paste
 set clipboard+=unnamed
 nnoremap <F5> :set invpaste paste?<CR>
-nmap <silent> <BS> :nohlsearch<CR>
 set pastetoggle=<F5>
 
 " remap completion
@@ -119,3 +118,5 @@ function! GetTree()
 endfunction
 :nnoremap <leader>tree :call GetTree()<cr>
 
+" relativenumber
+set relativenumber

@@ -5,6 +5,7 @@ eval "$(rbenv init -)"
 
 # Explicitly configured $PATH variable
 export ANDROID_HOME=/Users/habu/Library/Android/sdk
+export HOMEBREW_GITHUB_API_TOKEN=1eb889d8ba1eea1e979e25dbdf7d56f63e1bb89d
 # Gradle
 if [[ -d "$HOME/Packages/gradle-2.11" ]]; then
     export GRADLE_HOME="$HOME/Packages/gradle-2.11"
@@ -53,27 +54,6 @@ fi
 if [ -f $HOME/.profile ]; then
   source $HOME/.profile  # Read Mac .profile, if present.
 fi
-
-# Shell Aliases
-## Git Aliases
-alias gs='git status '
-alias ga='git add '
-alias gb='git branch '
-alias gc='git commit'
-alias gd='git diff'
-# alias go='git checkout '
-alias gk='gitk --all&'
-alias gx='gitx --all'
-
-## Vagrant Aliases
-alias vag='vagrant'
-alias vagup='vagrant up'
-alias vagdestroy='vagrant destroy'
-alias vagssh='vagrant ssh'
-alias vaghalt='vagrant halt'
-
-## Miscellaneous Aliases
-alias htop='sudo htop'
 
 # Shell Functions
 # qfind - used to quickly find files that contain a string in a directory

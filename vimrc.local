@@ -120,3 +120,8 @@ endfunction
 
 " relativenumber
 set relativenumber
+
+" map <F6> to generate ctags
+nnoremap <F6> :!ctags -R<cr>
+" Automatically generate ctags on save.
+autocmd BufWritePost * call system("ctags -R")

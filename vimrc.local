@@ -1,4 +1,3 @@
-" Undo config
 if has('persistent_undo')
 	set undofile
 endif
@@ -23,7 +22,10 @@ set wildignore+=node_modules,bower_components,env,public
 
 " custom indentation for filetypes
 autocmd FileType sass setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType scss setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
+autocmd BufNewFile,BufRead *.erb setlocal filetype=eruby
+autocmd BufNewFile,BufRead *.scss.erb setlocal expandtab shiftwidth=2 tabstop=2
 
 set expandtab sw=4 ts=4 ai
 
@@ -119,12 +121,27 @@ endfunction
 :nnoremap <leader>tree :call GetTree()<cr>
 
 " relativenumber
-set relativenumber
+set rnu
+" set number
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nornu
+    set nu
+  else
+    set rnu
+    set nonu
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
 
 " map <F6> to generate ctags
 nnoremap <F6> :!ctags -R<cr>
 " Automatically generate ctags on save.
-autocmd BufWritePost * call system("ctags -R")
+" autocmd BufWritePost * call system("ctags -R")
 
 " use ack instead of vim
 :set grepprg=ack\ --nogroup\ $*
+
+" transparent background
+:hi Normal ctermbg=none

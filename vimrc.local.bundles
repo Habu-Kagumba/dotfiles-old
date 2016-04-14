@@ -6,6 +6,7 @@ NeoBundle 'mitsuhiko/jinja2'
 NeoBundle 'Valloric/YouCompleteMe'
 " kinda-like delimitmate
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
 NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'othree/es.next.syntax.vim'
 NeoBundle 'gavocanov/vim-js-indent'

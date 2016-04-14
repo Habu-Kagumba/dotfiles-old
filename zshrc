@@ -1,9 +1,9 @@
-source $HOME/.bash_aliases
+source $HOME/.bash_profile
 
 # RVM
 eval "$(rbenv init -)"
 
-# Explicitly configured $PATH variable
+export PATH="/usr/local/heroku/bin:$PATH"
 export ANDROID_HOME=/Users/habu/Library/Android/sdk
 export HOMEBREW_GITHUB_API_TOKEN=1eb889d8ba1eea1e979e25dbdf7d56f63e1bb89d
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
@@ -43,7 +43,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx zsh-syntax-highlighting brew repo sudo knife vagrant bundler web-search)
+plugins=(git osx zsh-syntax-highlighting brew repo sudo bundler web-search boot2docker django docker gem git-flow-avh heroku node npm postgres rails rake redis-cli rsync ruby ssh-agent tmux thor zeus)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -66,17 +66,25 @@ qfind () {
 # export WORKON_HOME=~/Env
 # source /usr/local/bin/virtualenvwrapper.sh
 
-
 # added by travis gem
 [ -f /home/herbert/.travis/travis.sh ] && source /home/herbert/.travis/travis.sh
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+# Custom commands
 
-## Add tmux alias here
-alias tm='tmux new-session -s "$(basename "$PWD")"'
-alias tma='tmux attach-session -t "$(basename "$PWD")"'
-alias tmd='tmux detach'
-alias tml='tmux ls'
-alias tmk='tmux kill-session'
+# Git add all, commit and push to master (Initialize repo)
+
+gvc() {
+  if [ -d '.git' ]; then
+    echo "Automated version control..."
+  else
+    g init
+  fi
+  ga $@ && gc && ggp
+}
+
+# create new rails app
+
+rails_new() {
+  rails new $1 && $1 && gvc . && vim
+}
 

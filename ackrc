@@ -1,0 +1,27 @@
+#to install ack, see http://betterthangrep.com/
+#to use ack, launch terminal (mac osx) and type 'ack <some_keywords>'
+#ack will search all files in the current directory & sub-directories
+
+# Always color, even if piping to a another program
+--color
+
+--ignore-dir=.idea/
+--ignore-dir=node_modules/
+--ignore-dir=.bundle
+--ignore-dir=coverage
+--ignore-dir=tmp
+--ignore-dir=log
+--ignore-file=is:tags
+
+#make sure ack knows how to search common filetypes used in rails projects
+--type-add=css=scss
+--type-add=ruby=.haml,.rselm,.feature,.ru,.lock
+--type-set=coffeescript=.coffee
+--type-set=coffee=.coffee
+
+#make sure ack knows how to search common filetypes used in node.js projects
+--ignore-dir=node_modules
+--type-set=coffee=.coffee
+--type-set=jade=.jade
+--type-set=feature=.feature
+--type-set=json=.json

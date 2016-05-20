@@ -6,7 +6,7 @@ eval "$(rbenv init -)"
 export PATH="/usr/local/heroku/bin:$PATH"
 export ANDROID_HOME=/Users/habu/Library/Android/sdk
 export HOMEBREW_GITHUB_API_TOKEN=1eb889d8ba1eea1e979e25dbdf7d56f63e1bb89d
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+export EDITOR=/usr/local/bin/vim
 # Gradle
 if [[ -d "$HOME/Packages/gradle-2.11" ]]; then
     export GRADLE_HOME="$HOME/Packages/gradle-2.11"

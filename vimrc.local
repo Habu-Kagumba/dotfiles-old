@@ -18,13 +18,15 @@ set pastetoggle=<F5>
 inoremap <leader>, <C-x><C-p>
 
 " additional wildignore
-set wildignore+=node_modules,bower_components,env,public
+set wildignore+=node_modules,bower_components,env,public,coverage
 
 " custom indentation for filetypes
 autocmd FileType sass setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
 autocmd BufNewFile,BufRead *.erb setlocal filetype=eruby
+autocmd BufNewFile,BufRead *.html setlocal filetype=html
+autocmd BufNewFile,BufRead *.scss.erb setlocal filetype=scss
 autocmd BufNewFile,BufRead *.scss.erb setlocal expandtab shiftwidth=2 tabstop=2
 
 set expandtab sw=4 ts=4 ai
@@ -101,6 +103,15 @@ function! RubyRun()
 endfunction
 :nnoremap <leader>r :call RubyRun()<cr>
 
+" run rubocop in terminal
+function! RubocopRun()
+    call inputsave()
+    let params = input('Run rubocop file: ')
+    call inputrestore()
+    execute "!clear; rubocop ".params
+endfunction
+:nnoremap <leader>rub :call RubocopRun()<cr>
+
 " Customise vim-rspec command
 let g:rspec_command = "!clear; bundle exec rspec -c -f d {spec}"
 
@@ -145,3 +156,6 @@ nnoremap <F6> :!ctags -R<cr>
 
 " transparent background
 :hi Normal ctermbg=none
+
+" markdown
+let g:markdown_fenced_languages = ['html', 'vim', 'ruby', 'python', 'bash=sh']

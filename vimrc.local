@@ -101,7 +101,7 @@ function! RubyRun()
     call inputrestore()
     execute "!clear; ruby ".params
 endfunction
-:nnoremap <leader>r :call RubyRun()<cr>
+:nnoremap <leader>ruby :call RubyRun()<cr>
 
 " run rubocop in terminal
 function! RubocopRun()
@@ -110,7 +110,7 @@ function! RubocopRun()
     call inputrestore()
     execute "!clear; rubocop ".params
 endfunction
-:nnoremap <leader>rub :call RubocopRun()<cr>
+:nnoremap <leader>rubocop :call RubocopRun()<cr>
 
 " Customise vim-rspec command
 let g:rspec_command = "!clear; bundle exec rspec -c -f d {spec}"

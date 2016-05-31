@@ -10,9 +10,11 @@ set undolevels=5000
 set matchpairs+=<:>,=:;
 
 " Paste
-set clipboard+=unnamed
 nnoremap <F5> :set invpaste paste?<CR>
 set pastetoggle=<F5>
+
+" remap <ESC>
+inoremap jk <Esc>
 
 " remap completion
 inoremap <leader>, <C-x><C-p>

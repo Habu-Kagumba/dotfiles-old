@@ -153,9 +153,6 @@ nnoremap <F6> :!ctags -R<cr>
 " Automatically generate ctags on save.
 " autocmd BufWritePost * call system("ctags -R")
 
-" use ack instead of vim
-:set grepprg=ack\ --nogroup\ $*
-
 " transparent background
 :hi Normal ctermbg=none
 

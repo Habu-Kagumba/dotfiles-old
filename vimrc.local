@@ -158,3 +158,6 @@ nnoremap <F6> :!ctags -R<cr>
 
 " markdown
 let g:markdown_fenced_languages = ['html', 'vim', 'ruby', 'python', 'bash=sh']
+
+" re-indent whole file
+map <F7> mzgg=G`z`

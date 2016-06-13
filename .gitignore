@@ -1,6 +1,5 @@
 oh-my-zsh/
-tmux-battery/
-tmux-online-status/
+tmux-*/
 vim/vim
 vim/.netrwhist
 chef/

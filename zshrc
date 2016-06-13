@@ -1,4 +1,5 @@
 source $HOME/.bash_profile
+source $HOME/.web_utils.sh
 
 # RVM
 eval "$(rbenv init -)"
@@ -68,23 +69,4 @@ qfind () {
 
 # added by travis gem
 [ -f /home/herbert/.travis/travis.sh ] && source /home/herbert/.travis/travis.sh
-
-# Custom commands
-
-# Git add all, commit and push to master (Initialize repo)
-
-gvc() {
-  if [ -d '.git' ]; then
-    echo "Automated version control..."
-  else
-    g init
-  fi
-  ga $@ && gc && ggp
-}
-
-# create new rails app
-
-rails_new() {
-  rails new $1 && $1 && gvc . && vim
-}
 

@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="ackrc bash_profile bashrc vimrc vimrc.local vimrc.local.bundles tmux.conf zshrc oh-my-zsh tmuxline.conf"    # list of files/folders to symlink in homedir
+files="web_utils.sh ackrc bash_profile bashrc vimrc vimrc.local vimrc.local.bundles tmux.conf zshrc oh-my-zsh tmuxline.conf"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -37,6 +37,12 @@ if [[ ! -d $dir/tmux-battery/ ]]; then
 fi
 if [[ ! -d $dir/tmux-online-status/ ]]; then
     git clone http://github.com/tmux-plugins/tmux-online-status.git
+fi
+if [[ ! -d $dir/tmux-resurrect/ ]]; then
+    git clone http://github.com/tmux-plugins/tmux-resurrect.git
+fi
+if [[ ! -d $dir/tmux-continuum/ ]]; then
+    git clone http://github.com/tmux-plugins/tmux-continuum.git
 fi
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then

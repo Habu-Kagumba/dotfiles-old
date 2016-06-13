@@ -105,6 +105,12 @@ function! RubyRun()
 endfunction
 :nnoremap <leader>ruby :call RubyRun()<cr>
 
+" run erlang in terminal
+function! ErlangRun()
+    execute "!clear; erl"
+endfunction
+:nnoremap <leader>erl :call ErlangRun()<cr>
+
 " run rubocop in terminal
 function! RubocopRun()
     call inputsave()

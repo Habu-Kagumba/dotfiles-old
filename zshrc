@@ -1,5 +1,6 @@
 source $HOME/.bash_profile
 source $HOME/.web_utils.sh
+source $HOME/.env
 
 # RVM
 eval "$(rbenv init -)"

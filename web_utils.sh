@@ -7,7 +7,7 @@ gvc() {
     else
         git init
     fi
-    gaa $@ && gc
+    git add --all $@ && gc
 }
 
 # create new rails app
@@ -22,7 +22,7 @@ rails_new() {
 
 # procedures for new rails api proj
 api() {
-    rails-api new $1 --skip-sprockets;
+    rails-api new $1 -S -d=postgresql -J --skip-turbolinks -T;
     cd $1;
     echo "Refer here -> https://github.com/rails-api/rails-api#for-new-apps";
     vim config/environments/{development,test}.rb;

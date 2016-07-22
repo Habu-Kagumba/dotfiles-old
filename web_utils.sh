@@ -1,22 +1,12 @@
 #!/usr/bin/env bash
 
-# Git add all, commit and push to master (Initialize repo)
-gvc() {
-    if [ -d '.git' ]; then
-        echo "Automated version control..."
-    else
-        git init
-    fi
-    git add --all $@ && gc
-}
-
 # create new rails app
 rails_new() {
     if [ -z "$1"  ]; then
         echo "Please specify an application name";
     else
         echo "Creating a new rails application";
-        rails new $1 && cd $1 && gvc . && vim
+        rails new $1 && cd $1 && vim
     fi
 }
 

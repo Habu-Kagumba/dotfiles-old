@@ -4,6 +4,8 @@ alias vagdestroy='vagrant destroy'
 alias vagssh='vagrant ssh'
 alias vaghalt='vagrant halt'
 
+alias git=hub
+
 alias htop='sudo htop'
 
 alias chime_off='sudo nvram SystemAudioVolume=%80'

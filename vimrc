@@ -106,6 +106,7 @@ NeoBundle "eagletmt/neco-ghc"
 NeoBundle "dag/vim2hs"
 NeoBundle "pbrisbin/vim-syntax-shakespeare"
 
+"" Elixir Bundle
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'carlosgaldino/elixir-snippets'
 
@@ -393,10 +394,10 @@ let g:UltiSnipsEditSplit="vertical"
 
 " syntastic
 let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
+let g:syntastic_error_symbol='❌'
+let g:syntastic_warning_symbol='❗️'
+let g:syntastic_style_error_symbol = '❌'
+let g:syntastic_style_warning_symbol = '❗️'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 
@@ -599,7 +600,7 @@ if !exists('g:airline_powerline_fonts')
   let g:airline_right_sep         = '◀'
   let g:airline_right_alt_sep     = '«'
   let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
-  let g:airline#extensions#readonly#symbol   = '⊘'
+  let g:airline#extensions#readonly#symbol   = '🚫'
   let g:airline#extensions#linecolumn#prefix = '¶'
   let g:airline#extensions#paste#symbol      = 'ρ'
   let g:airline_symbols.linenr    = '␊'

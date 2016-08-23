@@ -1,6 +1,7 @@
 source $HOME/.bash_profile
 source $HOME/.web_utils.sh
 source $HOME/.env
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # RVM
 eval "$(rbenv init -)"

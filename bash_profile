@@ -42,3 +42,7 @@ alias tma='tmux attach-session -t "$(basename "$PWD")"'
 alias tmd='tmux detach'
 alias tml='tmux ls'
 alias tmk='tmux kill-session'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/habu/.sdkman"
+[[ -s "/Users/habu/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/habu/.sdkman/bin/sdkman-init.sh"

@@ -38,3 +38,7 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 # added by travis gem
 [ -f /home/herbert/.travis/travis.sh ] && source /home/herbert/.travis/travis.sh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/habu/.sdkman"
+[[ -s "/Users/habu/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/habu/.sdkman/bin/sdkman-init.sh"

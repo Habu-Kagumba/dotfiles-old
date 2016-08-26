@@ -61,7 +61,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 let g:sx_ext_required = 0
 
 " syntastic
-let g:syntastic_javascript_checkers=['standard']
+let g:syntastic_javascript_checkers=['eslint']
 
 " Example setting checker for specific project
 

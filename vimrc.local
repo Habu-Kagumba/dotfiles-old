@@ -59,6 +59,9 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Allow JSX in normal JS files
 let g:jsx_ext_required = 0
 
+" Js linting
+let g:used_javascript_libs = 'react,chai,flux,rambda,jasmine'
+
 " Autoclose Quickfix
 let g:flow#autoclose = 1
 
@@ -161,7 +164,7 @@ nnoremap <C-m> :call NumberToggle()<cr>
 " map <F6> to generate ctags
 nnoremap <F6> :!ctags -R<cr>
 " Automatically generate ctags on save.
-" autocmd BufWritePost * call system("ctags -R")
+autocmd BufWritePost * call system("ctags -R")
 
 " transparent background
 :hi Normal ctermbg=none

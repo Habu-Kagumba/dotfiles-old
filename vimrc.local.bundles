@@ -10,6 +10,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 " JS
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'ternjs/tern_for_vim'
 NeoBundle 'kern/vim-es7'
 NeoBundle 'othree/yajs.vim'

@@ -88,7 +88,6 @@ NeoBundle "davidhalter/jedi-vim"
 NeoBundle "tpope/vim-rails"
 NeoBundle "tpope/vim-rake"
 NeoBundle "tpope/vim-projectionist"
-NeoBundle "thoughtbot/vim-rspec"
 NeoBundle "ecomba/vim-ruby-refactoring"
 
 "" HTML Bundle
@@ -109,6 +108,9 @@ NeoBundle 'carlosgaldino/elixir-snippets'
 
 "" Go Lang Bundle
 NeoBundle "fatih/vim-go"
+
+"" Test runners
+NeoBundle "geekjuice/vim-spec"
 
 
 "" Include user's extra bundle

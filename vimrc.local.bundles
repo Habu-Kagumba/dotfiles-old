@@ -1,22 +1,43 @@
+" Utils
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'edkolev/tmuxline.vim'
-NeoBundle 'gavocanov/vim-js-indent'
-NeoBundle 'mitsuhiko/jinja2'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'othree/es.next.syntax.vim'
 NeoBundle 'pbrisbin/vim-mkdir'
-NeoBundle 'shime/vim-livedown'
-NeoBundle 'ternjs/tern_for_vim'
-NeoBundle 'tmhedberg/matchit'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'wakatime/vim-wakatime'
+NeoBundle 'terryma/vim-multiple-cursors'
+
+" JS
+NeoBundle 'mxw/vim-jsx'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'ternjs/tern_for_vim'
+NeoBundle 'kern/vim-es7'
+NeoBundle 'othree/yajs.vim'
+NeoBundle 'isRuslan/vim-es6'
+NeoBundle 'othree/es.next.syntax.vim'
+NeoBundleLazy 'flowtype/vim-flow', {
+          \ 'autoload': {
+          \     'filetypes': 'javascript'
+          \ },
+          \ 'build': {
+          \     'mac': 'npm install -g flow-bin',
+          \     'unix': 'npm install -g flow-bin'
+          \ }}
+
+" Ruby
+NeoBundle 'vim-ruby/vim-ruby'
+
+" Erlang
 NeoBundle 'vim-erlang/vim-erlang-runtime'
 NeoBundle 'vim-erlang/vim-erlang-compiler'
 NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
 NeoBundle 'vim-erlang/vim-erlang-tags'
 NeoBundle 'vim-erlang/vim-erlang-skeletons'
+
+" Templating
+NeoBundle 'mitsuhiko/jinja2'
+NeoBundle 'shime/vim-livedown'
+NeoBundle 'tmhedberg/matchit'
+
+" API
 NeoBundle 'kylef/apiblueprint.vim'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'flowtype/vim-flow'

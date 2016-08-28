@@ -84,9 +84,6 @@ NeoBundle 'sherzberg/vim-bootstrap-updater'
 "" Python Bundle
 NeoBundle "davidhalter/jedi-vim"
 
-"" Javascript Bundle
-NeoBundle 'othree/yajs.vim'
-
 "" Ruby Bundle
 NeoBundle "tpope/vim-rails"
 NeoBundle "tpope/vim-rake"

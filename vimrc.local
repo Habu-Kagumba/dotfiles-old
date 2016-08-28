@@ -19,9 +19,6 @@ inoremap jk <Esc>
 " remap completion
 inoremap <leader>, <C-x><C-p>
 
-" additional wildignore
-set wildignore+=node_modules,bower_components,env,public,coverage
-
 " custom indentation for filetypes
 autocmd BufNewFile,BufRead *.erb setlocal filetype=eruby
 autocmd BufNewFile,BufRead *.html setlocal filetype=html

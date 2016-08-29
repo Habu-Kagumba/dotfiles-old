@@ -16,6 +16,7 @@ NeoBundle 'kern/vim-es7'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'othree/es.next.syntax.vim'
+NeoBundle 'thomd/vim-jasmine'
 NeoBundleLazy 'flowtype/vim-flow', {
           \ 'autoload': {
           \     'filetypes': 'javascript'

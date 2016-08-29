@@ -26,12 +26,9 @@ autocmd BufNewFile,BufRead *.haml setlocal filetype=haml
 autocmd BufNewFile,BufRead *.scss.erb setlocal filetype=scss
 autocmd FileType sass setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal expandtab shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType eruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType haml setlocal expandtab shiftwidth=2 tabstop=2
-
-set expandtab sw=4 ts=4 ai
 
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()
@@ -164,7 +161,7 @@ nnoremap <C-m> :call NumberToggle()<cr>
 " map <F6> to generate ctags
 nnoremap <F6> :!ctags -R<cr>
 " Automatically generate ctags on save.
-autocmd BufWritePost * call system("ctags -R")
+" autocmd BufWritePost * call system("ctags -R")
 
 " transparent background
 :hi Normal ctermbg=none

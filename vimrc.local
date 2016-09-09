@@ -172,9 +172,7 @@ let g:markdown_fenced_languages = ['html', 'vim', 'ruby', 'python', 'bash=sh']
 " re-indent whole file
 map <F7> mzgg=G`z`
 
-" …also, Insert Mode as bpry<space>
-iabbr bpry require'pry';binding.pry
-" And admit that the typos happen:
+" Insert Mode as bpry<space>
 iabbr bpry require'pry';binding.pry
 
 " Add the pry debug line with ,bp
@@ -188,3 +186,11 @@ map <F9> :wa<cr>:call system('kill-pry-rescue')<cr>
 " Nab lines from ~/.pry_history (respects "count")
 nmap <Leader>ph :<c-u>let pc = (v:count1 ? v:count1 : 1)<cr>:read !tail -<c-r>=pc<cr> ~/.pry_history<cr>:.-<c-r>=pc-1<cr>:norm <c-r>=pc<cr>==<cr>
 " ↑ thanks to Houl, ZyX-i, and paradigm of #vim for all dogpiling on this one.
+
+" Fonts customization
+highlight Comment cterm=italic
+highlight htmlArg cterm=italic
+
+" Android
+let g:gradle_path = '/Users/habu/.sdkman/candidates/gradle/current/bin/gradle'
+let g:android_sdk_path = '/Users/habu/Library/Android/sdk'

@@ -9,13 +9,12 @@ NeoBundle 'terryma/vim-multiple-cursors'
 
 " JS
 NeoBundle 'mxw/vim-jsx'
+NeoBundle 'moll/vim-node'
+NeoBundle 'ludovicchabant/vim-gutentags'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'ternjs/tern_for_vim'
 NeoBundle 'kern/vim-es7'
-NeoBundle 'othree/yajs.vim'
 NeoBundle 'isRuslan/vim-es6'
-NeoBundle 'othree/es.next.syntax.vim'
 NeoBundle 'thomd/vim-jasmine'
 NeoBundleLazy 'flowtype/vim-flow', {
           \ 'autoload': {
@@ -43,3 +42,6 @@ NeoBundle 'tmhedberg/matchit'
 
 " API
 NeoBundle 'kylef/apiblueprint.vim'
+
+" Android
+NeoBundle 'hsanson/vim-android'

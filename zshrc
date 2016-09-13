@@ -10,6 +10,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export ANDROID_HOME=/Users/habu/Library/Android/sdk
 export HOMEBREW_GITHUB_API_TOKEN=1eb889d8ba1eea1e979e25dbdf7d56f63e1bb89d
 export EDITOR=/usr/local/bin/vim
+export GOPATH=$HOME/Projects/Go-code
 
 if [[ $COLORTERM == "gnome-terminal" ]]; then
             export TERM="xterm-256color"

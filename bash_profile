@@ -46,3 +46,4 @@ alias tmk='tmux kill-session'
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/habu/.sdkman"
 [[ -s "/Users/habu/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/habu/.sdkman/bin/sdkman-init.sh"
+if [ -e /Users/habu/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/habu/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

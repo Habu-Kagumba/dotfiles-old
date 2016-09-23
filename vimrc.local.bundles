@@ -14,6 +14,8 @@ NeoBundle 'ludovicchabant/vim-gutentags'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'ternjs/tern_for_vim'
 NeoBundle 'kern/vim-es7'
+NeoBundle 'digitaltoad/vim-pug'
+NeoBundle 'mtscout6/syntastic-local-eslint.vim'
 NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'thomd/vim-jasmine'
 NeoBundleLazy 'flowtype/vim-flow', {

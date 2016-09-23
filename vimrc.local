@@ -23,12 +23,14 @@ inoremap <leader>, <C-x><C-p>
 autocmd BufNewFile,BufRead *.erb setlocal filetype=eruby
 autocmd BufNewFile,BufRead *.html setlocal filetype=html
 autocmd BufNewFile,BufRead *.haml setlocal filetype=haml
+autocmd BufNewFile,BufRead,BufReadPost *.jade setlocal filetype=jade
 autocmd BufNewFile,BufRead *.scss.erb setlocal filetype=scss
 autocmd FileType sass setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType eruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType haml setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType jade setlocal expandtab shiftwidth=2 tabstop=2
 
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()

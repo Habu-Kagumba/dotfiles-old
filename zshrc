@@ -3,14 +3,13 @@ source $HOME/.web_utils.sh
 source $HOME/.env
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# RVM
-eval "$(rbenv init -)"
-
 export GOPATH=$HOME/Projects/Go-code
-export PATH="/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/.rbenv/shims:$PATH"
 export ANDROID_HOME=/Users/habu/Library/Android/sdk
 export HOMEBREW_GITHUB_API_TOKEN=1eb889d8ba1eea1e979e25dbdf7d56f63e1bb89d
 export EDITOR=/usr/local/bin/vim
+
+eval "$(rbenv init -)"
 
 if [[ $COLORTERM == "gnome-terminal" ]]; then
             export TERM="xterm-256color"

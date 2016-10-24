@@ -1,6 +1,7 @@
 "*****************************************************************************
 "" NeoBundle core
 "*****************************************************************************
+set shell=bash\ -l
 if has('vim_starting')
   set nocompatible               " Be iMproved
 
@@ -416,17 +417,17 @@ set visualbell t_vb=
 
 "" Copy/Paste/Cut
 if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
+	set clipboard=unamed,unamedplus
 endif
 
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
 
+" pbcopy for OSX copy/paste
 if has('macunix')
-  " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
-  vmap <C-c> :w !pbcopy<CR><CR>
+	vmap <C-x> :!pbcopy<CR>
+	vmap <C-c> :w !pbcopy<CR><CR>
 endif
 
 "" Buffer nav
@@ -536,6 +537,8 @@ augroup FileType go
   au FileType go nmap <leader>rb <Plug>(go-build)
   au FileType go nmap <leader>gt <Plug>(go-test)
 augroup END
+
+let g:go_fmt_command = "goimports"
 
 
 let erlang_folding = 1

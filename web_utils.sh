@@ -35,3 +35,9 @@ rails_api_new() {
     fi
 
 }
+
+# echo -e "To prepend\n$(cat file.txt)" > file.txt
+
+prepend_text() {
+	printf "$1 \n$(cat $2)" > $2;
+}

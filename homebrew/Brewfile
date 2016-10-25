@@ -16,6 +16,7 @@ cask 'spotify'
 cask 'slack'
 cask 'vlc'
 cask 'virtualbox'
+brew 'vim', args: ['with-override-system-vi']
 brew 'openssl'
 brew 'android-platform-tools'
 brew 'cmake'

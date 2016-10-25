@@ -1,0 +1,18 @@
+[user]
+    name = Herbert Kagumba
+    email = herbert.kagumba@andela.com
+[core]
+    editor = /usr/local/bin/vim
+    excludesfile = ~/.gitignore_global
+[commit]
+    template = ~/.gitmessage
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/habu/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

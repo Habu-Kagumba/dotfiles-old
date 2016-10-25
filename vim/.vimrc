@@ -184,7 +184,7 @@ set ruler
 
 let no_buffers_menu=1
 if !exists('g:not_finsh_neobundle')
-  colorscheme base16-default
+  colorscheme base16-default-dark
 endif
 
 set mousemodel=popup

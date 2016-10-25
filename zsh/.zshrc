@@ -1,7 +1,7 @@
 source $HOME/.bash_profile
-source $HOME/.web_utils.sh
+# source $HOME/.web_utils.sh
 source $HOME/.env
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export GOPATH=$HOME/Projects/Go-code
 export PATH="$HOME/.rbenv/bin:/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/.rbenv/shims:$PATH"

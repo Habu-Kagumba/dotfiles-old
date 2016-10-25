@@ -10,7 +10,6 @@
 RCS
 CVS
 Attic
-utils
 .*~
 \.\#.*
 \#.*\#
@@ -30,5 +29,7 @@ _darcs
 tmux/.tmux/
 vim/.vim/
 zsh/.zshenv
+utils/make*
+utils/.DS_Store
 README.*
 COPYING

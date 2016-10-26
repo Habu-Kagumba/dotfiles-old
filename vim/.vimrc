@@ -414,11 +414,12 @@ let g:indentLine_faster = 1
 
 " Disable visualbell
 set visualbell t_vb=
+set clipboard=unnamed
 
-"" Copy/Paste/Cut
-if has('unnamedplus')
-	set clipboard=unamed,unamedplus
-endif
+" "" Copy/Paste/Cut
+" if has('unnamedplus')
+" 	set clipboard=unamed,unamedplus
+" endif
 
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>

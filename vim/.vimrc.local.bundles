@@ -4,7 +4,6 @@ NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'pbrisbin/vim-mkdir'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'ryanoasis/vim-devicons'
 
@@ -19,14 +18,6 @@ NeoBundle 'digitaltoad/vim-pug'
 NeoBundle 'mtscout6/syntastic-local-eslint.vim'
 NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'thomd/vim-jasmine'
-NeoBundleLazy 'flowtype/vim-flow', {
-          \ 'autoload': {
-          \     'filetypes': 'javascript'
-          \ },
-          \ 'build': {
-          \     'mac': 'npm install -g flow-bin',
-          \     'unix': 'npm install -g flow-bin'
-          \ }}
 
 " Ruby
 NeoBundle 'vim-ruby/vim-ruby'

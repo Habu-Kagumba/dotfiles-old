@@ -1,11 +1,11 @@
 source $HOME/.bash_profile
-source $HOME/.web_utils.sh
+# source $HOME/.web_utils.sh
 source $HOME/.env
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export GOPATH=$HOME/Projects/Go-code
 export PATH="$HOME/.rbenv/bin:/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/.rbenv/shims:$PATH"
-export ANDROID_HOME=/Users/habu/Library/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export HOMEBREW_GITHUB_API_TOKEN=1eb889d8ba1eea1e979e25dbdf7d56f63e1bb89d
 export EDITOR=/usr/local/bin/vim
 
@@ -70,8 +70,8 @@ qfind () {
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/habu/.sdkman"
-[[ -s "/Users/habu/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/habu/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export NVM_DIR="/Users/habu/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="/Users/herbertkagumba/.nvm"
+[ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

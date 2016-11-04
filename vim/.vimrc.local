@@ -24,6 +24,7 @@ autocmd BufNewFile,BufRead *.erb setlocal filetype=eruby
 autocmd BufNewFile,BufRead *.html setlocal filetype=html
 autocmd BufNewFile,BufRead *.haml setlocal filetype=haml
 autocmd BufNewFile,BufRead,BufReadPost *.jade setlocal filetype=jade
+autocmd BufNewFile,BufRead,BufReadPost *.js setlocal filetype=javascript
 autocmd BufNewFile,BufRead *.scss.erb setlocal filetype=scss
 autocmd FileType sass setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal expandtab shiftwidth=2 tabstop=2
@@ -196,3 +197,8 @@ highlight htmlArg cterm=italic
 " Android
 let g:gradle_path = '/Users/habu/.sdkman/candidates/gradle/current/bin/gradle'
 let g:android_sdk_path = '/Users/habu/Library/Android/sdk'
+
+" ELM
+nnoremap <leader>el :ElmEvalLine<CR>
+vnoremap <leader>es :<C-u>ElmEvalSelection<CR>
+nnoremap <leader>em :ElmMakeCurrentFile<CR>

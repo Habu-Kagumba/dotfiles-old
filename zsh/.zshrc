@@ -88,3 +88,6 @@ pips() {
     fi
     pip install $package_name && pip freeze | grep -i $package_name >> $requirements_file
 }
+
+# added by travis gem
+[ -f /Users/herbertkagumba/.travis/travis.sh ] && source /Users/herbertkagumba/.travis/travis.sh

@@ -43,7 +43,8 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx zsh-syntax-highlighting brew repo sudo bundler web-search boot2docker django docker gem git-flow-avh heroku node npm postgres rails rake redis-cli rsync ruby ssh-agent tmux thor zeus)
+plugins=(virtualenvwrapper git zsh-syntax-highlighting brew repo bundler docker gem git-flow-avh heroku postgres rake redis-cli rsync tmux)
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,3 +92,5 @@ pips() {
 
 # added by travis gem
 [ -f /Users/herbertkagumba/.travis/travis.sh ] && source /Users/herbertkagumba/.travis/travis.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

@@ -4,8 +4,6 @@
 [core]
     editor = /usr/local/bin/vim
 	excludesfile = /Users/herbertkagumba/.gitignore_global
-[commit]
-    template = ~/.gitmessage
 [filter "lfs"]
     required = true
     clean = git-lfs clean %f

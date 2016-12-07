@@ -1,3 +1,2 @@
-Dotfiles - Beyond Here, Lay Dragons
+My Dotfiles - Lasciate ogne speranza, voi ch'intrate
 ========
-This repository includes all of my custom dotfiles.

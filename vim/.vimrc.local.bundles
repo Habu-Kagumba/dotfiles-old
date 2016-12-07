@@ -42,3 +42,7 @@ NeoBundle 'kylef/apiblueprint.vim'
 
 " Android
 NeoBundle 'hsanson/vim-android'
+
+" C
+NeoBundle 'vim-scripts/c.vim'
+NeoBundle 'rdnetto/YCM-Generator'

@@ -7,6 +7,7 @@ vim/.netrwhist
 chef/
 private
 vim-bootstrap
+venv
 
 # swap
 [._]*.s[a-w][a-z]
@@ -34,6 +35,9 @@ tags
 .DS_Store
 .AppleDouble
 .LSOverride
+
+#VirtualBox
+*.ova
 
 # Icon must end with two \r
 Icon

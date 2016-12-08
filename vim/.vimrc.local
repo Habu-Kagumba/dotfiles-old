@@ -199,8 +199,8 @@ highlight Comment cterm=italic
 highlight htmlArg cterm=italic
 
 " Android
-let g:gradle_path = '/Users/habu/.sdkman/candidates/gradle/current/bin/gradle'
-let g:android_sdk_path = '/Users/habu/Library/Android/sdk'
+let g:gradle_path = '$HOME/.sdkman/candidates/gradle/current/bin/gradle'
+let g:android_sdk_path = '$HOME/Library/Android/sdk'
 
 " ELM
 nnoremap <leader>el :ElmEvalLine<CR>

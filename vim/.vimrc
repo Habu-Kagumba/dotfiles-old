@@ -545,7 +545,7 @@ let g:go_list_type = "quickfix"
 
 function! GoDebug()
     call inputsave()
-    let params = input('-instrument=pkgA,pkgB:')
+    let params = input('Enter external packages (-instrument): ')
     call inputrestore()
     execute "!clear; godebug run ".params
 endfunction

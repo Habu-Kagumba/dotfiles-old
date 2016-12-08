@@ -526,9 +526,7 @@ let g:tagbar_type_go = {
 " vim-go
 augroup FileType go
   au!
-  au FileType go nmap gd <Plug>(go-def)
-  au FileType go nmap <Leader>dd <Plug>(go-def-vertical)
-
+  au FileType go nmap <Leader>ds <Plug>(go-def-split)
   au FileType go nmap <Leader>dv <Plug>(go-doc-vertical)
   au FileType go nmap <Leader>db <Plug>(go-doc-browser)
 
@@ -537,10 +535,23 @@ augroup FileType go
   au FileType go nmap <leader>gr <Plug>(go-run)
   au FileType go nmap <leader>rb <Plug>(go-build)
   au FileType go nmap <leader>gt <Plug>(go-test)
+  au FileType go nmap <leader>c <Plug>(go-coverage)
 augroup END
 
 let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
 
+function! GoDebug()
+    call inputsave()
+    let params = input('-instrument=pkgA,pkgB:')
+    call inputrestore()
+    execute "!clear; godebug run ".params
+endfunction
+:nnoremap <leader>gdr :call GoDebug()<cr>
+
+" Erlang
 
 let erlang_folding = 1
 let erlang_show_errors = 1

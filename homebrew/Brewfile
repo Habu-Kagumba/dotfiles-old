@@ -1,7 +1,6 @@
 brew 'android-platform-tools'
 brew 'cmake'
 brew 'ctags'
-brew 'docker-clean'
 brew 'elasticsearch'
 brew 'elixir'
 brew 'elm'

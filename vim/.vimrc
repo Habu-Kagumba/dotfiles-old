@@ -77,7 +77,7 @@ endif
 NeoBundle 'honza/vim-snippets'
 
 "" Color
-NeoBundle 'chriskempson/base16-vim'
+" NeoBundle 'chriskempson/base16-vim'
 
 "" Vim-Bootstrap Updater
 NeoBundle 'sherzberg/vim-bootstrap-updater'
@@ -184,7 +184,7 @@ set ruler
 
 let no_buffers_menu=1
 if !exists('g:not_finsh_neobundle')
-  colorscheme base16-default-dark
+  colorscheme paramount
 endif
 
 set mousemodel=popup
@@ -573,6 +573,9 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
+
+" Mocha
+let g:mocha_js_command = "!./node_modules/.bin/mocha --require babel-polyfill --compilers js:babel-register"
 
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>

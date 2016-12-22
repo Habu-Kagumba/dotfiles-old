@@ -6,6 +6,7 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'ryanoasis/vim-devicons'
+NeoBundle 'owickstrom/vim-colors-paramount'
 
 " JS
 NeoBundle 'mxw/vim-jsx'

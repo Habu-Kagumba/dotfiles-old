@@ -4,7 +4,7 @@ source $HOME/.env
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export GOPATH=$HOME/Projects/Go-code
-export PATH="$HOME/.rbenv/bin:/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/.rbenv/shims:$PATH"
+export PATH="$HOME/.rbenv/bin:/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/Projects/go_appengine:$HOME/.rbenv/shims:$PATH"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export EDITOR=/usr/local/bin/vim
 export LANG=en_US.UTF-8

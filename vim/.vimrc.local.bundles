@@ -8,6 +8,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'ryanoasis/vim-devicons'
 NeoBundle 'owickstrom/vim-colors-paramount'
 NeoBundle 'wakatime/vim-wakatime'
+NeoBundle 'EinfachToll/DidYouMean'
 
 " JS
 NeoBundle 'mxw/vim-jsx'

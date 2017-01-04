@@ -229,3 +229,8 @@ nnoremap <silent> <Leader>- :exe "vertical resize 100"<CR>
         execute "digraphs vs " . 0x1D65
         execute "digraphs xs " . 0x2093
 "}}}
+
+" Important buffers stuff
+
+nnoremap ¡ :ls<cr>:b
+set path+=**

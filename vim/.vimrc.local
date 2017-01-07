@@ -232,5 +232,8 @@ nnoremap <silent> <Leader>- :exe "vertical resize 100"<CR>
 
 " Important buffers stuff
 
-nnoremap ¡ :ls<cr>:b
+nnoremap <Leader>b :ls<cr>:b
+noremap <Leader>e :find 
+noremap \ <C-^><CR>
 set path+=**
+set wildmenu

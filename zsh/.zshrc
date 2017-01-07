@@ -7,6 +7,7 @@ export GOPATH=$HOME/Projects/Go-code
 export PATH="$HOME/.rbenv/bin:/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/Projects/go_appengine:$HOME/.rbenv/shims:$PATH"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export EDITOR=/usr/local/bin/vim
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 

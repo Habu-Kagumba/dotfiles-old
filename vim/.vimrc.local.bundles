@@ -9,6 +9,7 @@ NeoBundle 'ryanoasis/vim-devicons'
 NeoBundle 'owickstrom/vim-colors-paramount'
 NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'EinfachToll/DidYouMean'
+NeoBundle 'junegunn/fzf.vim'
 
 " JS
 NeoBundle 'mxw/vim-jsx'

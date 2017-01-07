@@ -1,3 +1,5 @@
+alias ag='ag --path-to-ignore ~/.agignore'
+
 alias vag='vagrant'
 alias vagup='vagrant up'
 alias vagdestroy='vagrant destroy'

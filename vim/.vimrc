@@ -236,11 +236,12 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'monochrome'
+let g:airline_theme = 'base16_grayscale'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 "*****************************************************************************
 "" Abbreviations

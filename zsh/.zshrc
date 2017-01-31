@@ -8,13 +8,17 @@ export PATH="$HOME/.rbenv/bin:/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bi
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export EDITOR=/usr/local/bin/vim
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+export FZF_DEFAULT_OPTS='
+	--color fg:188,bg:233,hl:103,fg+:222,bg+:234,hl+:104
+	--color info:183,prompt:110,spinner:107,pointer:167,marker:215
+'
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 eval "$(rbenv init -)"
 
 if [[ $COLORTERM == "gnome-terminal" ]]; then
-            export TERM="xterm-256color"
+	export TERM="xterm-256color"
 fi
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -51,18 +55,18 @@ source $ZSH/oh-my-zsh.sh
 
 # Put any proprietary or private functions/values in ~/.private, and this will source them
 if [ -f $HOME/.private ]; then
-  source $HOME/.private
+	source $HOME/.private
 fi
 
 if [ -f $HOME/.profile ]; then
-  source $HOME/.profile  # Read Mac .profile, if present.
+	source $HOME/.profile  # Read Mac .profile, if present.
 fi
 
 # Shell Functions
 # qfind - used to quickly find files that contain a string in a directory
 qfind () {
-  find . -exec grep -l -s $1 {} \;
-  return 0
+	find . -exec grep -l -s $1 {} \;
+	return 0
 }
 
 # export WORKON_HOME=~/Env
@@ -82,16 +86,28 @@ export NVM_DIR="/Users/herbertkagumba/.nvm"
 function git() { hub $@; }
 
 pips() {
-    package_name=$1
-    requirements_file=$2
-    if [[ -z $requirements_file ]]
-    then
-        requirements_file='./requirements.txt'
-    fi
-    pip install $package_name && pip freeze | grep -i $package_name >> $requirements_file
+	package_name=$1
+	requirements_file=$2
+	if [[ -z $requirements_file ]]
+	then
+		requirements_file='./requirements.txt'
+	fi
+	pip install $package_name && pip freeze | grep -i $package_name >> $requirements_file
 }
 
 # added by travis gem
 [ -f /Users/herbertkagumba/.travis/travis.sh ] && source /Users/herbertkagumba/.travis/travis.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /Users/herbertkagumba/google-cloud-sdk/path.zsh.inc ]; then
+  source '/Users/herbertkagumba/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /Users/herbertkagumba/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/Users/herbertkagumba/google-cloud-sdk/completion.zsh.inc'
+fi

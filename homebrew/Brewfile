@@ -37,6 +37,7 @@ brew 'readline'
 brew 'reattach-to-user-namespace'
 brew 'redis', service_restart: true
 brew 'sqlite'
+brew 'spectacle'
 brew 'stow'
 brew 'the_silver_searcher'
 brew 'tmux'

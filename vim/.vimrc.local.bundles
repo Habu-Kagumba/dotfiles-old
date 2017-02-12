@@ -25,7 +25,7 @@ NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'thomd/vim-jasmine'
 
 " ELM
-NeoBundle 'lambdatoast/elm.vim'
+NeoBundle 'elmcast/elm-vim'
 
 " Ruby
 NeoBundle 'vim-ruby/vim-ruby'

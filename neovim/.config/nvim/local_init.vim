@@ -98,9 +98,9 @@ nnoremap <silent> <Leader>- :exe "vertical resize 100"<CR>
 
 " Important buffers stuff
 
-nnoremap <Leader>b :Buffers<cr>
-noremap <Leader>e :Files<cr>
-noremap <Leader>ge :GFiles<cr>
+" nnoremap <Leader>b :Buffers<cr>
+noremap <Leader>e :FZF<cr>
+" noremap <Leader>ge :GFiles<cr>
 noremap \ <C-^><CR>
 set path+=**
 set wildmenu

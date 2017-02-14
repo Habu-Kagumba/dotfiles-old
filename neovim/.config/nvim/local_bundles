@@ -1,0 +1,26 @@
+" Utils
+Plug 'Valloric/YouCompleteMe'
+Plug 'edkolev/tmuxline.vim'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ryanoasis/vim-devicons'
+Plug 'owickstrom/vim-colors-paramount'
+Plug 'wakatime/vim-wakatime'
+Plug 'EinfachToll/DidYouMean'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Elm
+Plug 'elmcast/elm-vim'
+
+" Ruby
+Plug 'vim-ruby/vim-ruby'
+
+" Templating
+Plug 'shime/vim-livedown'
+Plug 'tmhedberg/matchit'
+
+" C
+Plug 'vim-scripts/c.vim'
+Plug 'rdnetto/YCM-Generator'

@@ -4,7 +4,7 @@ source $HOME/.env
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export GOPATH=$HOME/Projects/Go-code
-export PATH="$HOME/.rbenv/bin:/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/Projects/go_appengine:$HOME/.rbenv/shims:$PATH"
+export PATH="/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/Projects/go_appengine:$HOME/.rbenv/shims:$HOME/.pyenv/shims:$PATH"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export EDITOR=/usr/local/bin/vim
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
@@ -16,6 +16,8 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 if [[ $COLORTERM == "gnome-terminal" ]]; then
 	export TERM="xterm-256color"
@@ -48,7 +50,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(virtualenvwrapper git zsh-syntax-highlighting brew repo bundler docker gem git-flow-avh heroku postgres rake redis-cli rsync tmux)
+plugins=(git zsh-syntax-highlighting brew repo bundler docker gem git-flow-avh heroku postgres rake redis-cli rsync tmux)
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 source $ZSH/oh-my-zsh.sh

@@ -1,4 +1,5 @@
 alias ag='ag --path-to-ignore ~/.agignore'
+alias vim='nvim'
 
 alias vag='vagrant'
 alias vagup='vagrant up'

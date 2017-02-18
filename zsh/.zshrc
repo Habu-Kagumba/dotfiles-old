@@ -6,7 +6,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export GOPATH=$HOME/Projects/Go-code
 export PATH="/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/Projects/go_appengine:$HOME/.rbenv/shims:$HOME/.pyenv/shims:$PATH"
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export EDITOR=/usr/local/bin/vim
+export EDITOR=/usr/local/bin/nvim
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export FZF_DEFAULT_OPTS='
 	--color fg:188,bg:233,hl:103,fg+:222,bg+:234,hl+:104
@@ -113,3 +113,5 @@ fi
 if [ -f /Users/herbertkagumba/google-cloud-sdk/completion.zsh.inc ]; then
   source '/Users/herbertkagumba/google-cloud-sdk/completion.zsh.inc'
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

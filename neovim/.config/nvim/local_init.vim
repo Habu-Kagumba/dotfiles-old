@@ -107,3 +107,36 @@ set wildmenu
 
 " Fuzzy Search support
 set rtp+=/usr/local/opt/fzf
+
+" optiona YCM config
+" These are the tweaks I apply to YCM's config, you don't need them but they might help.
+" YCM gives you popups and splits by default that some people might not like, so these should tidy it up a bit for you.
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+set completeopt-=preview
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_semantic_triggers = {
+			\ 'elm' : ['.'],
+			\}
+nnoremap <silent> <F8> :!clear;gcc % -o % && ./%<CR>
+
+" Syntastic quickfix window setting
+let g:syntastic_loc_list_height=2
+
+" add shebang info to files
+augroup Shebang
+  autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
+  autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># encoding: UTF-8\<nl>\"|$
+  autocmd BufNewFile *.tex 0put =\"%&plain\<nl>\"|$
+  autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
+augroup END
+
+" Customise vim-rspec command
+let g:rspec_command = "!clear; bundle exec rspec -c -f d {spec}"
+
+" map <F6> to generate ctags
+nnoremap <F6> :!ctags -R<cr>
+" Automatically generate ctags on save.
+" autocmd BufWritePost * call system("ctags -R")

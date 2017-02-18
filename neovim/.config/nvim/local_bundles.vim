@@ -10,6 +10,7 @@ Plug 'owickstrom/vim-colors-paramount'
 Plug 'wakatime/vim-wakatime'
 Plug 'EinfachToll/DidYouMean'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'sotte/presenting.vim'
 
 " Elm
 Plug 'elmcast/elm-vim'

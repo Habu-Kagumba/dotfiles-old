@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+content="
+{
+  "plugins": {
+    "es_modules": {},
+    "node": {}
+  },
+  "libs": [
+    "ecma5",
+    "ecma6",
+    "browser",
+    "jquery"
+  ],
+  "ecmaVersion": 6
+}
+"
+
+touch .tern-project && echo ${content} >> .tern-project

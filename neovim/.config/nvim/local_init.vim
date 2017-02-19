@@ -108,18 +108,31 @@ set wildmenu
 " Fuzzy Search support
 set rtp+=/usr/local/opt/fzf
 
-" optiona YCM config
-" These are the tweaks I apply to YCM's config, you don't need them but they might help.
-" YCM gives you popups and splits by default that some people might not like, so these should tidy it up a bit for you.
-let g:ycm_add_preview_to_completeopt=0
-let g:ycm_confirm_extra_conf=0
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-set completeopt-=preview
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_semantic_triggers = {
-			\ 'elm' : ['.'],
-			\}
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
+set completeopt=longest,menuone,preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+
+" " optiona YCM config
+" " These are the tweaks I apply to YCM's config, you don't need them but they might help.
+" " YCM gives you popups and splits by default that some people might not like, so these should tidy it up a bit for you.
+" let g:ycm_add_preview_to_completeopt=0
+" let g:ycm_confirm_extra_conf=0
+" let g:ycm_key_list_select_completion=[]
+" let g:ycm_key_list_previous_completion=[]
+" set completeopt-=preview
+" let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+" let g:ycm_semantic_triggers = {
+" 			\ 'elm' : ['.'],
+" 			\}
 nnoremap <silent> <F8> :!clear;gcc % -o % && ./%<CR>
 
 " Syntastic quickfix window setting

@@ -2,6 +2,22 @@
 let g:python_host_prog = '/Users/herbertkagumba/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = '/Users/herbertkagumba/.pyenv/versions/neovim3/bin/python'
 
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+
+" ELM
+let g:elm_syntastic_show_warnings = 1
+let g:elm_format_autosave = 1
+let g:elm_setup_keybindings = 0
+
+
+nnoremap <leader>erepl  :ElmRepl<cr>
+nnoremap <leader>err    :ElmErrorDetail<cr>
+nnoremap <leader>edocs  :ElmShowDocs<cr>
+vnoremap <leader>ebrw    :ElmBrowseDocs<cr>
+vnoremap <leader>efmt   :ElmFormat<cr>
+
 " Clean search (highlight)
 nmap <silent> <BS> :nohlsearch<CR>
 
@@ -67,10 +83,6 @@ map <F9> :wa<cr>:call system('kill-pry-rescue')<cr>
 " Nab lines from ~/.pry_history (respects "count")
 nmap <Leader>ph :<c-u>let pc = (v:count1 ? v:count1 : 1)<cr>:read !tail -<c-r>=pc<cr> ~/.pry_history<cr>:.-<c-r>=pc-1<cr>:norm <c-r>=pc<cr>==<cr>
 " ↑ thanks to Houl, ZyX-i, and paradigm of #vim for all dogpiling on this one.
-
-
-" ELM
-let g:elm_format_autosave = 1
 
 " Resize
 nnoremap <silent> <Leader>- :exe "vertical resize 100"<CR>

@@ -28,3 +28,7 @@ Plug 'tmhedberg/matchit'
 " C
 Plug 'vim-scripts/c.vim'
 Plug 'rdnetto/YCM-Generator'
+
+" Scala
+Plug 'derekwyatt/vim-scala'
+Plug 'ensime/ensime-vim'

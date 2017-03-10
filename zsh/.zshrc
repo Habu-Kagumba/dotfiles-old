@@ -4,7 +4,7 @@ source $HOME/.env
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export GOPATH=$HOME/Projects/Go-code
-export PATH="/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/Projects/go_appengine:$HOME/.rbenv/shims:$HOME/.pyenv/shims:$PATH"
+export PATH="/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/Projects/go_appengine:$HOME/.rbenv/shims:$HOME/.pyenv/shims:$HOME/.scalaenv/bin:$PATH"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export EDITOR=/usr/local/bin/nvim
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
@@ -18,6 +18,8 @@ export LC_ALL=en_US.UTF-8
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+eval "$(goenv init -)"
+eval "$(scalaenv init -)"
 
 if [[ $COLORTERM == "gnome-terminal" ]]; then
 	export TERM="xterm-256color"

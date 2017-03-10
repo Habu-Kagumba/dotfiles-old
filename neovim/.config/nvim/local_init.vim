@@ -165,3 +165,9 @@ let g:rspec_command = "!clear; bundle exec rspec -c -f d {spec}"
 nnoremap <F6> :!ctags -R<cr>
 " Automatically generate ctags on save.
 " autocmd BufWritePost * call system("ctags -R")
+
+" Scala
+let g:scala_scaladoc_indent = 1
+autocmd BufWritePost *.scala silent :EnTypeCheck
+nnoremap <localleader>dt :EnTypeCheck<CR>
+au FileType scala nnoremap <localleader>df :EnDeclarationSplit v<CR><Paste>

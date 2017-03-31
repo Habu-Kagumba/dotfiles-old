@@ -2,7 +2,7 @@
     name = Herbert Kagumba
     email = habukagumba@gmail.com
 [core]
-    editor = /usr/local/bin/vim
+    editor = /usr/local/bin/nvim
 	excludesfile = /Users/herbertkagumba/.gitignore_global
 [filter "lfs"]
     required = true

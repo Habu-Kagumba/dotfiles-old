@@ -1,11 +1,17 @@
 source $HOME/.bash_profile
 # source $HOME/.web_utils.sh
 source $HOME/.env
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export GOPATH=$HOME/Projects/Go-code
-export PATH="/usr/local/heroku/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/Projects/go_appengine:$HOME/.rbenv/shims:$HOME/.pyenv/shims:$HOME/.scalaenv/bin:$PATH"
-export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/go/bin:$GOPATH/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
+export PATH="$HOME/.pyenv/shims:$PATH"
+export PATH="$HOME/.nodenv/bin:$PATH"
+export PATH="$HOME/.scalaenv/bin:$PATH"
+export PATH="/Library/Frameworks/R.framework/Versions/3.3/Resources/library/Rserve/libs:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH"
 export EDITOR=/usr/local/bin/nvim
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export FZF_DEFAULT_OPTS='
@@ -18,6 +24,7 @@ export LC_ALL=en_US.UTF-8
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+eval "$(nodenv init -)"
 eval "$(goenv init -)"
 eval "$(scalaenv init -)"
 
@@ -32,8 +39,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="xiong-chiamiov-plus"
-ZSH_THEME="robbyrussell"
+ZSH_THEME="pure"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -73,20 +79,6 @@ qfind () {
 	return 0
 }
 
-# export WORKON_HOME=~/Env
-# source /usr/local/bin/virtualenvwrapper.sh
-
-# added by travis gem
-[ -f /home/herbert/.travis/travis.sh ] && source /home/herbert/.travis/travis.sh
-
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-export NVM_DIR="/Users/herbertkagumba/.nvm"
-[ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 function git() { hub $@; }
 
 pips() {
@@ -99,21 +91,8 @@ pips() {
 	pip install $package_name && pip freeze | grep -i $package_name >> $requirements_file
 }
 
-# added by travis gem
-[ -f /Users/herbertkagumba/.travis/travis.sh ] && source /Users/herbertkagumba/.travis/travis.sh
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH="$HOME/.yarn/bin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f /Users/herbertkagumba/google-cloud-sdk/path.zsh.inc ]; then
-  source '/Users/herbertkagumba/google-cloud-sdk/path.zsh.inc'
-fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f /Users/herbertkagumba/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/Users/herbertkagumba/google-cloud-sdk/completion.zsh.inc'
-fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

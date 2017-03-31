@@ -1,5 +1,4 @@
 " Utils
-" Plug 'Valloric/YouCompleteMe'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
@@ -10,13 +9,9 @@ Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ryanoasis/vim-devicons'
 Plug 'owickstrom/vim-colors-paramount'
-Plug 'wakatime/vim-wakatime'
 Plug 'EinfachToll/DidYouMean'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'sotte/presenting.vim'
-
-" Elm
-Plug 'elmcast/elm-vim'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -24,11 +19,6 @@ Plug 'vim-ruby/vim-ruby'
 " Templating
 Plug 'shime/vim-livedown'
 Plug 'tmhedberg/matchit'
-
-" C
-Plug 'vim-scripts/c.vim'
-Plug 'rdnetto/YCM-Generator'
-
 " Scala
 Plug 'derekwyatt/vim-scala'
 Plug 'ensime/ensime-vim'

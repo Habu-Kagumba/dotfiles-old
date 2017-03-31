@@ -6,18 +6,6 @@ let g:python3_host_prog = '/Users/herbertkagumba/.pyenv/versions/neovim3/bin/pyt
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
-" ELM
-let g:elm_syntastic_show_warnings = 1
-let g:elm_format_autosave = 1
-let g:elm_setup_keybindings = 0
-
-
-nnoremap <leader>erepl  :ElmRepl<cr>
-nnoremap <leader>err    :ElmErrorDetail<cr>
-nnoremap <leader>edocs  :ElmShowDocs<cr>
-vnoremap <leader>ebrw    :ElmBrowseDocs<cr>
-vnoremap <leader>efmt   :ElmFormat<cr>
-
 " Clean search (highlight)
 nmap <silent> <BS> :nohlsearch<CR>
 
@@ -142,10 +130,6 @@ let g:tern#arguments = ['--persistent']
 " let g:ycm_key_list_previous_completion=[]
 " set completeopt-=preview
 " let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-" let g:ycm_semantic_triggers = {
-" 			\ 'elm' : ['.'],
-" 			\}
-nnoremap <silent> <F8> :!clear;gcc % -o % && ./%<CR>
 
 " Syntastic quickfix window setting
 let g:syntastic_loc_list_height=2
@@ -165,7 +149,7 @@ let g:rspec_command = "!clear; bundle exec rspec -c -f d {spec}"
 nnoremap <F6> :!ctags -R<cr>
 " Automatically generate ctags on save.
 " autocmd BufWritePost * call system("ctags -R")
-
+"
 " Scala
 let g:scala_scaladoc_indent = 1
 autocmd BufWritePost *.scala silent :EnTypeCheck

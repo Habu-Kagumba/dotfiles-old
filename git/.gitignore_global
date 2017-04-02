@@ -4,8 +4,8 @@ oh-my-zsh/
 tmux-*/
 vim/vim
 vim/.netrwhist
-neovim/.config/nvim/heroku/*
-neovim/.config/nvim/hub/*
+neovim/.config/heroku/*
+neovim/.config/hub
 neovim/.config/nvim/autoload/*
 neovim/.config/nvim/plugged/*
 neovim/.config/nvim/session/*

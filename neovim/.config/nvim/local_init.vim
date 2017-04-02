@@ -1,22 +1,10 @@
 " Python settings
-let g:python_host_prog = '/Users/herbertkagumba/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/Users/herbertkagumba/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = '/Users/habu/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/habu/.pyenv/versions/neovim3/bin/python'
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-
-" ELM
-let g:elm_syntastic_show_warnings = 1
-let g:elm_format_autosave = 1
-let g:elm_setup_keybindings = 0
-
-
-nnoremap <leader>erepl  :ElmRepl<cr>
-nnoremap <leader>err    :ElmErrorDetail<cr>
-nnoremap <leader>edocs  :ElmShowDocs<cr>
-vnoremap <leader>ebrw    :ElmBrowseDocs<cr>
-vnoremap <leader>efmt   :ElmFormat<cr>
 
 " Clean search (highlight)
 nmap <silent> <BS> :nohlsearch<CR>

@@ -2,8 +2,8 @@
     name = Herbert Kagumba
     email = habukagumba@gmail.com
 [core]
-    editor = /usr/local/bin/vim
-	excludesfile = /Users/herbertkagumba/.gitignore_global
+    editor = /usr/local/bin/nvim
+	excludesfile = /Users/habu/.gitignore_global
 [filter "lfs"]
     required = true
     clean = git-lfs clean %f
@@ -15,4 +15,4 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [alias]
-	url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'
+    url =! bash -c 'git config --get remote.origin.url | sed -E "s/.+:\\(.+\\)\\.git$/https:\\\\/\\\\/github\\\\.com\\\\/\\\\1/g"'

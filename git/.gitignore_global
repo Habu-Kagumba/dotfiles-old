@@ -4,9 +4,14 @@ oh-my-zsh/
 tmux-*/
 vim/vim
 vim/.netrwhist
+neovim/.config/nvim/heroku/*
+neovim/.config/nvim/hub/*
+neovim/.config/nvim/autoload/*
+neovim/.config/nvim/plugged/*
+neovim/.config/nvim/session/*
+neovim/.config/yarn/*
 chef/
 private
-vim-bootstrap
 venv
 
 # swap

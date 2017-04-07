@@ -5,6 +5,7 @@ source $HOME/.env
 autoload -U promptinit; promptinit
 prompt pure
 
+export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export GOPATH=$HOME/Projects/Go-code

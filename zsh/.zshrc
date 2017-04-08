@@ -8,7 +8,7 @@ prompt pure
 export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
-export GOPATH=$HOME/Projects/Go-code
+export GOPATH=$HOME/dev/go-code
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"

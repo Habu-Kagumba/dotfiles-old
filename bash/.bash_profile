@@ -1,6 +1,9 @@
 alias ag='ag --path-to-ignore ~/.agignore'
 alias vim='nvim'
 
+alias drmi='docker rmi $(docker images -a -q)'
+alias drmc='docker stop $(docker ps -a -q) && docker rm -v $(docker ps -a -q)'
+
 alias vag='vagrant'
 alias vagup='vagrant up'
 alias vagdestroy='vagrant destroy'
@@ -45,8 +48,3 @@ alias tma='tmux attach-session -t "$(basename "$PWD")"'
 alias tmd='tmux detach'
 alias tml='tmux ls'
 alias tmk='tmux kill-session'
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/habu/.sdkman"
-[[ -s "/Users/habu/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/habu/.sdkman/bin/sdkman-init.sh"
-if [ -e /Users/habu/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/habu/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

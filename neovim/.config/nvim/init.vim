@@ -37,6 +37,19 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'pbrisbin/vim-mkdir'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ryanoasis/vim-devicons'
+Plug 'owickstrom/vim-colors-paramount'
+Plug 'EinfachToll/DidYouMean'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'janko-m/vim-test'
 
 let g:make = 'gmake'
 if exists('make')
@@ -70,6 +83,7 @@ Plug 'owickstrom/vim-colors-paramount'
 " c
 Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'
+Plug 'rdnetto/YCM-Generator'
 
 " go
 "" Go Lang Bundle
@@ -95,20 +109,25 @@ Plug 'davidhalter/jedi-vim'
 
 
 " ruby
-Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-projectionist'
-Plug 'thoughtbot/vim-rspec'
 Plug 'ecomba/vim-ruby-refactoring'
+Plug 'tpope/vim-rails'
+
+
+" templating
+Plug 'shime/vim-livedown'
+Plug 'tmhedberg/matchit'
+
+
+" scala
+Plug 'derekwyatt/vim-scala'
+Plug 'ensime/ensime-vim'
 
 
 "*****************************************************************************
 "*****************************************************************************
-
-"" Include user's extra bundle
-if filereadable(expand("~/.config/nvim/local_bundles.vim"))
-  source ~/.config/nvim/local_bundles.vim
-endif
 
 call plug#end()
 
@@ -545,6 +564,9 @@ augroup END
 
 
 " python
+let g:python_host_prog = '/Users/habu/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/habu/.pyenv/versions/neovim3/bin/python'
+
 " vim-python
 augroup vimrc-python
   autocmd!
@@ -587,6 +609,155 @@ augroup vimrc-ruby
   autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
 augroup END
 
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+
+" Clean search (highlight)
+nmap <silent> <BS> :nohlsearch<CR>
+
+" Clipboard size
+if has('persistent_undo')
+	set undofile
+endif
+
+set undodir=$HOME/.VIM_UNDO_FILES
+
+set undolevels=5000
+
+" Matchpairs
+set matchpairs+=<:>,=:;
+
+" Paste
+nnoremap <F5> :set invpaste paste?<CR>
+set pastetoggle=<F5>
+
+" remap <ESC>
+inoremap jk <Esc>
+
+" remap completion
+inoremap <leader>, <C-x><C-p>
+
+" enable mouse scrolling
+set mouse=a
+
+" relativenumber
+set rnu
+
+" switch number style
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nornu
+    set nu
+  else
+    set rnu
+    set nonu
+  endif
+endfunc
+
+nnoremap <C-m> :call NumberToggle()<cr>
+
+" markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['html', 'vim', 'ruby', 'python', 'bash=sh', 'go']
+
+" re-indent whole file
+map <F7> mzgg=G`z`
+
+" Insert Mode as bpry<space>
+iabbr bpry require'pry';binding.pry
+
+" Add the pry debug line with ,bp
+map <Leader>bp orequire'pry';binding.pry<esc>:w<cr>
+" Alias for one-handed operation:
+map <Leader><Leader>p <Leader>bp
+
+" Keep pry from annoyingly hanging around when using, e.g. pry-rescue/minitest
+map <F9> :wa<cr>:call system('kill-pry-rescue')<cr>
+
+" Nab lines from ~/.pry_history (respects "count")
+nmap <Leader>ph :<c-u>let pc = (v:count1 ? v:count1 : 1)<cr>:read !tail -<c-r>=pc<cr> ~/.pry_history<cr>:.-<c-r>=pc-1<cr>:norm <c-r>=pc<cr>==<cr>
+" ↑ thanks to Houl, ZyX-i, and paradigm of #vim for all dogpiling on this one.
+
+" Resize
+nnoremap <silent> <Leader>- :exe "vertical resize 100"<CR>
+
+" Alphanumerics
+"alphsubs ---------------------- {{{
+        execute "digraphs ks " . 0x2096
+        execute "digraphs as " . 0x2090
+        execute "digraphs es " . 0x2091
+        execute "digraphs hs " . 0x2095
+        execute "digraphs is " . 0x1D62
+        execute "digraphs ks " . 0x2096
+        execute "digraphs ls " . 0x2097
+        execute "digraphs ms " . 0x2098
+        execute "digraphs ns " . 0x2099
+        execute "digraphs os " . 0x2092
+        execute "digraphs ps " . 0x209A
+        execute "digraphs rs " . 0x1D63
+        execute "digraphs ss " . 0x209B
+        execute "digraphs ts " . 0x209C
+        execute "digraphs us " . 0x1D64
+        execute "digraphs vs " . 0x1D65
+        execute "digraphs xs " . 0x2093
+"}}}
+
+" Important buffers stuff
+
+" nnoremap <Leader>b :Buffers<cr>
+noremap <Leader>e :FZF<cr>
+" noremap <Leader>ge :GFiles<cr>
+noremap \ <C-^><CR>
+set path+=**
+set wildmenu
+
+" Fuzzy Search support
+set rtp+=/usr/local/opt/fzf
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
+set completeopt=longest,menuone,preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+nnoremap <silent> <F8> :!clear;gcc % -o % && ./%<CR>
+
+" Syntastic quickfix window setting
+let g:syntastic_loc_list_height=2
+
+" add shebang info to files
+augroup Shebang
+  autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
+  autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># encoding: UTF-8\<nl>\"|$
+  autocmd BufNewFile *.tex 0put =\"%&plain\<nl>\"|$
+  autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
+augroup END
+
+" map <F6> to generate ctags
+nnoremap <F6> :!ctags -R<cr>
+" Automatically generate ctags on save.
+" autocmd BufWritePost * call system("ctags -R")
+
+" Scala
+let g:scala_scaladoc_indent = 1
+autocmd BufWritePost *.scala silent :EnTypeCheck
+nnoremap <localleader>dt :EnTypeCheck<CR>
+au FileType scala nnoremap <localleader>df :EnDeclarationSplit v<CR><Paste>
+
+" Testing mappings
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>s :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
 let g:tagbar_type_ruby = {
     \ 'kinds' : [
         \ 'm:modules',
@@ -597,12 +768,6 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
-
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
 
 " Ruby refactory
 nnoremap <leader>rap  :RAddParameter<cr>
@@ -615,14 +780,6 @@ vnoremap <leader>rrlv :RRenameLocalVariable<cr>
 vnoremap <leader>rriv :RRenameInstanceVariable<cr>
 vnoremap <leader>rem  :RExtractMethod<cr>
 
-
-"*****************************************************************************
-"*****************************************************************************
-
-"" Include user's local vim config
-if filereadable(expand("~/.config/nvim/local_init.vim"))
-  source ~/.config/nvim/local_init.vim
-endif
 
 "*****************************************************************************
 "" Convenience variables
@@ -644,4 +801,3 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
-

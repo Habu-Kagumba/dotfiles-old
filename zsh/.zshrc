@@ -6,6 +6,9 @@ autoload -U promptinit; promptinit
 prompt pure
 
 export PATH="$HOME/bin:$PATH"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export GOPATH=$HOME/dev/go-code
@@ -17,6 +20,8 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="$HOME/.scalaenv/bin:$PATH"
 export PATH="/Library/Frameworks/R.framework/Versions/3.3/Resources/library/Rserve/libs:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH"
+export PATH="/usr/local/opt/qt/bin:$PATH"
+
 export EDITOR=/usr/local/bin/nvim
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export FZF_DEFAULT_OPTS='

@@ -34,13 +34,10 @@ Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -100,7 +97,13 @@ Plug 'mattn/emmet-vim'
 
 " javascript
 "" Javascript Bundle
-Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'ternjs/tern_for_vim'
+Plug 'carlitux/deoplete-ternjs'
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
+Plug 'mklabs/jscs.vim', { 'do': 'yarn global add jscs' }
+Plug 'moll/vim-node'
 
 
 " python
@@ -239,7 +242,6 @@ endif
 
 " vim-airline
 let g:airline_theme = 'base16_grayscale'
-let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
@@ -401,15 +403,6 @@ let g:UltiSnipsEditSplit="vertical"
 " CONFLICT with some plugins like tpope/Endwise
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
-
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
@@ -553,13 +546,44 @@ augroup END
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
 
+" neomake
+let g:neomake_warning_sign = {
+  \ 'text': '⚠',
+  \ 'texthl': 'WarningMsg',
+  \ }
+let g:neomake_error_sign = {
+  \ 'text': '✗',
+  \ 'texthl': 'ErrorMsg',
+  \ }
+
+
 " javascript
+let g:neomake_javascript_eslint_maker = {
+    \ 'exe': './node_modules/.bin/eslint',
+    \ 'args': ['--env', 'es6', '-f', 'compact'],
+    \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
+    \ }
+
+let g:neomake_javascript_jscs_maker = {
+    \ 'exe': './node_modules/.bin/jscs',
+    \ 'args': ['--preset', 'airbnb', '--reporter', 'inline'],
+    \ 'errorformat': '%f: line %l\, col %c\, %m',
+    \ }
+
+let g:neomake_javascript_enabled_makers = ['eslint', 'jscs']
+let g:neomake_open_list = 2
+
+" Run neomake on save for js/json files
+autocmd! BufWritePost *.js Neomake
+autocmd! BufWritePost *.jsx Neomake
+autocmd! BufWritePost *.json Neomake
+
 let g:javascript_enable_domhtmlcss = 1
 
 " vim-javascript
 augroup vimrc-javascript
   autocmd!
-  autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4 smartindent
+  autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
 augroup END
 
 
@@ -575,6 +599,16 @@ augroup vimrc-python
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
+let g:neomake_python_flake8_maker = {
+    \ 'args': ['--ignore=E221,E241,E272,E251,W702,E203,E201,E202',  '--format=default'],
+    \ 'errorformat':
+        \ '%E%f:%l: could not compile,%-Z%p^,' .
+        \ '%A%f:%l:%c: %t%n %m,' .
+        \ '%A%f:%l: %t%n %m,' .
+        \ '%-G%.%#',
+    \ }
+let g:neomake_python_enabled_makers = ['flake8']
+
 " jedi-vim
 let g:jedi#popup_on_dot = 0
 let g:jedi#goto_assignments_command = "<leader>g"
@@ -587,7 +621,7 @@ let g:jedi#completions_command = "<C-Space>"
 let g:jedi#smart_auto_mappings = 0
 
 " syntastic
-let g:syntastic_python_checkers=['python', 'flake8']
+" let g:syntastic_python_checkers=['python', 'flake8']
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
@@ -608,10 +642,6 @@ augroup vimrc-ruby
   autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
   autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
 augroup END
-
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
 
 " Clean search (highlight)
 nmap <silent> <BS> :nohlsearch<CR>
@@ -724,13 +754,9 @@ let g:deoplete#omni#functions.javascript = [
 \]
 set completeopt=longest,menuone,preview
 let g:deoplete#sources = {}
-let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 nnoremap <silent> <F8> :!clear;gcc % -o % && ./%<CR>
-
-" Syntastic quickfix window setting
-let g:syntastic_loc_list_height=2
 
 " add shebang info to files
 augroup Shebang

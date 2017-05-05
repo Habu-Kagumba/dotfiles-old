@@ -46,6 +46,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'owickstrom/vim-colors-paramount'
 Plug 'EinfachToll/DidYouMean'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
 
 let g:make = 'gmake'
@@ -735,9 +736,9 @@ nnoremap <silent> <Leader>- :exe "vertical resize 100"<CR>
 
 " Important buffers stuff
 
-" nnoremap <Leader>b :Buffers<cr>
+nnoremap <Leader>b :Buffers<cr>
 noremap <Leader>e :FZF<cr>
-" noremap <Leader>ge :GFiles<cr>
+noremap <Leader>ge :GFiles<cr>
 noremap \ <C-^><CR>
 set path+=**
 set wildmenu

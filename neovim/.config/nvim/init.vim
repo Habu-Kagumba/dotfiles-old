@@ -548,6 +548,8 @@ autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
 
 " neomake
+autocmd! BufWritePost * Neomake
+
 let g:neomake_warning_sign = {
   \ 'text': '⚠',
   \ 'texthl': 'WarningMsg',
@@ -574,17 +576,13 @@ let g:neomake_javascript_jscs_maker = {
 let g:neomake_javascript_enabled_makers = ['eslint', 'jscs']
 let g:neomake_open_list = 2
 
-" Run neomake on save for js/json files
-autocmd! BufWritePost *.js Neomake
-autocmd! BufWritePost *.jsx Neomake
-autocmd! BufWritePost *.json Neomake
-
 let g:javascript_enable_domhtmlcss = 1
 
 " vim-javascript
 augroup vimrc-javascript
   autocmd!
   autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
+  autocmd FileType coffee set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
 augroup END
 
 
@@ -643,6 +641,8 @@ augroup vimrc-ruby
   autocmd BufNewFile,BufRead *.rb,*.rbw,*.gemspec setlocal filetype=ruby
   autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
 augroup END
+
+autocmd Filetype eruby setlocal ts=2 sw=2 expandtab
 
 " Clean search (highlight)
 nmap <silent> <BS> :nohlsearch<CR>
@@ -747,7 +747,6 @@ set wildmenu
 set rtp+=/usr/local/opt/fzf
 
 " Deoplete
-let g:deoplete#enable_at_startup = 1
 let g:deoplete#omni#functions = {}
 let g:deoplete#omni#functions.javascript = [
   \ 'tern#Complete',
@@ -757,7 +756,8 @@ set completeopt=longest,menuone,preview
 let g:deoplete#sources = {}
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
-nnoremap <silent> <F8> :!clear;gcc % -o % && ./%<CR>
+
+nnoremap <silent> <F8> :!clear; make %<<CR>
 
 " add shebang info to files
 augroup Shebang

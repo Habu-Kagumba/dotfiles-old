@@ -127,7 +127,6 @@ Plug 'tmhedberg/matchit'
 
 " scala
 Plug 'derekwyatt/vim-scala'
-Plug 'ensime/ensime-vim'
 
 
 "*****************************************************************************
@@ -715,23 +714,23 @@ nnoremap <silent> <Leader>- :exe "vertical resize 100"<CR>
 
 " Alphanumerics
 "alphsubs ---------------------- {{{
-        execute "digraphs ks " . 0x2096
-        execute "digraphs as " . 0x2090
-        execute "digraphs es " . 0x2091
-        execute "digraphs hs " . 0x2095
-        execute "digraphs is " . 0x1D62
-        execute "digraphs ks " . 0x2096
-        execute "digraphs ls " . 0x2097
-        execute "digraphs ms " . 0x2098
-        execute "digraphs ns " . 0x2099
-        execute "digraphs os " . 0x2092
-        execute "digraphs ps " . 0x209A
-        execute "digraphs rs " . 0x1D63
-        execute "digraphs ss " . 0x209B
-        execute "digraphs ts " . 0x209C
-        execute "digraphs us " . 0x1D64
-        execute "digraphs vs " . 0x1D65
-        execute "digraphs xs " . 0x2093
+execute "digraphs ks " . 0x2096
+execute "digraphs as " . 0x2090
+execute "digraphs es " . 0x2091
+execute "digraphs hs " . 0x2095
+execute "digraphs is " . 0x1D62
+execute "digraphs ks " . 0x2096
+execute "digraphs ls " . 0x2097
+execute "digraphs ms " . 0x2098
+execute "digraphs ns " . 0x2099
+execute "digraphs os " . 0x2092
+execute "digraphs ps " . 0x209A
+execute "digraphs rs " . 0x1D63
+execute "digraphs ss " . 0x209B
+execute "digraphs ts " . 0x209C
+execute "digraphs us " . 0x1D64
+execute "digraphs vs " . 0x1D65
+execute "digraphs xs " . 0x2093
 "}}}
 
 " Important buffers stuff
@@ -771,12 +770,6 @@ augroup END
 nnoremap <F6> :!ctags -R<cr>
 " Automatically generate ctags on save.
 " autocmd BufWritePost * call system("ctags -R")
-
-" Scala
-let g:scala_scaladoc_indent = 1
-autocmd BufWritePost *.scala silent :EnTypeCheck
-nnoremap <localleader>dt :EnTypeCheck<CR>
-au FileType scala nnoremap <localleader>df :EnDeclarationSplit v<CR><Paste>
 
 " Testing mappings
 nmap <silent> <leader>t :TestNearest<CR>

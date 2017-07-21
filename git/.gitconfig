@@ -3,7 +3,7 @@
     email = habukagumba@gmail.com
 [core]
     editor = /usr/local/bin/nvim
-	excludesfile = /Users/habu/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [filter "lfs"]
     required = true
     clean = git-lfs clean %f

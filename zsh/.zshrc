@@ -11,16 +11,18 @@ export PATH="$ANDROID_HOME/tools:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
-export GOPATH=$HOME/dev/go-code
+export GOPATH="$HOME/dev/go-code"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$HOME/.pyenv/shims:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="$HOME/.scalaenv/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 export PATH="/Library/Frameworks/R.framework/Versions/3.3/Resources/library/Rserve/libs:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
 export EDITOR=/usr/local/bin/nvim
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
@@ -33,7 +35,7 @@ export LC_ALL=en_US.UTF-8
 
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 eval "$(nodenv init -)"
 eval "$(goenv init -)"
 eval "$(scalaenv init -)"

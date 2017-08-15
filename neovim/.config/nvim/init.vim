@@ -70,33 +70,26 @@ endif
 Plug 'honza/vim-snippets'
 
 "" Color
-" Plug 'tomasr/molokai'
 Plug 'owickstrom/vim-colors-paramount'
 
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
-
-" c
+" C
 Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'
 Plug 'rdnetto/YCM-Generator'
 
-" go
-"" Go Lang Bundle
+" Go
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
-
-" html
-"" HTML Bundle
+" HTML
 Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 
-
-" javascript
-"" Javascript Bundle
+" Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'ternjs/tern_for_vim'
 Plug 'carlitux/deoplete-ternjs'
@@ -105,33 +98,25 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'mklabs/jscs.vim', { 'do': 'yarn global add jscs' }
 Plug 'moll/vim-node'
 
-
-" python
-"" Python Bundle
+" Python
 Plug 'davidhalter/jedi-vim'
 
-
-" ruby
+" Ruby
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-projectionist'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'tpope/vim-rails'
 
-
-" templating
+" Templating
 Plug 'shime/vim-livedown'
 Plug 'tmhedberg/matchit'
 
-
-" scala
+" Scala
 Plug 'derekwyatt/vim-scala'
-
 
 " Wakatime
 Plug 'wakatime/vim-wakatime'
-
-
 "*****************************************************************************
 "*****************************************************************************
 
@@ -150,7 +135,6 @@ set fileencoding=utf-8
 set fileencodings=utf-8
 set bomb
 set binary
-
 
 "" Fix backspace indent
 set backspace=indent,eol,start
@@ -219,8 +203,6 @@ else
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
 endif
-
-
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0

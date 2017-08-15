@@ -39,6 +39,7 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 eval "$(nodenv init -)"
 eval "$(goenv init -)"
 eval "$(scalaenv init -)"
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh

@@ -115,6 +115,9 @@ Plug 'tmhedberg/matchit'
 " Scala
 Plug 'derekwyatt/vim-scala'
 
+" Perl
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+
 " Wakatime
 Plug 'wakatime/vim-wakatime'
 "*****************************************************************************

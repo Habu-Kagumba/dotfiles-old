@@ -23,6 +23,7 @@ export PATH="/Library/Frameworks/R.framework/Versions/3.3/Resources/library/Rser
 export PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
 export EDITOR=/usr/local/bin/nvim
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
@@ -39,6 +40,7 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 eval "$(nodenv init -)"
 eval "$(goenv init -)"
 eval "$(scalaenv init -)"
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh

@@ -70,3 +70,10 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Files related to Music Player Daemon
+mpd.db
+mpd.log
+mpd.pid
+mpdstate
+playlists/

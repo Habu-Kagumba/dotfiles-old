@@ -1,0 +1,10 @@
+directory: ~/Music/beets
+library: ~/.mpd/beets_lib.blb
+import:
+  move: yes
+plugins: lastgenre fetchart ftintitle mpdupdate smartplaylist random embedart
+embedart:
+  auto: yes
+mpdupdate:
+  host: localhost
+  port: 6600

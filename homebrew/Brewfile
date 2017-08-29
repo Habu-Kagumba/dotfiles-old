@@ -27,6 +27,7 @@ brew 'imagemagick'
 brew 'jq'
 brew 'libressl'
 brew 'libssh2'
+brew 'mpc'
 brew 'mpd'
 brew 'neovim'
 brew 'ncmpcpp', args: ['with-visualizer']

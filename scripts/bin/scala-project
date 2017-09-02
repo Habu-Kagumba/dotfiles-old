@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+mkdir -p src/{main,test}/{resources,scala}
+mkdir project target
+
+echo 'name := "'$1'"
+version := "1.0"
+scalaVersion := "'$(scalaenv version | awk '{print $1}' | sed 's/scala-//')'"' > build.sbt

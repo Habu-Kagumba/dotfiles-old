@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 
+project_name=$1
+project_name_camel=$(echo "$project_name" | perl -pe 's/(^|-)(\w)/\U$2/g')
+
+mkdir "$project_name"
+cd "$project_name"
+
 mkdir -p src/{main,test}/{resources,scala}
 mkdir project target
 
-echo 'name := "'$1'"
+echo 'name := "'$project_name_camel'"
 version := "1.0"
 scalaVersion := "'$(scalaenv version | awk '{print $1}' | sed 's/scala-//')'"' > build.sbt
+
+cd -

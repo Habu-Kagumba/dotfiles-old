@@ -549,13 +549,13 @@ let g:neomake_error_sign = {
 
 " javascript
 let g:neomake_javascript_eslint_maker = {
-    \ 'exe': './node_modules/.bin/eslint',
+    \ 'exe': 'eslint',
     \ 'args': ['--env', 'es6', '-f', 'compact'],
     \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
     \ }
 
 let g:neomake_javascript_jscs_maker = {
-    \ 'exe': './node_modules/.bin/jscs',
+    \ 'exe': 'jscs',
     \ 'args': ['--preset', 'airbnb', '--reporter', 'inline'],
     \ 'errorformat': '%f: line %l\, col %c\, %m',
     \ }

@@ -1,6 +1,8 @@
 source $HOME/.bash_profile
 # source $HOME/.web_utils.sh
 source $HOME/.env
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
 
 autoload -U promptinit; promptinit
 prompt pure
@@ -24,6 +26,7 @@ export PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
+export PATH="$HOME/Packages:$PATH"
 
 export EDITOR=/usr/local/bin/nvim
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'

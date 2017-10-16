@@ -12,6 +12,7 @@ neovim/.config/nvim/session/*
 neovim/.config/yarn/*
 neovim/.config/configstore/*
 neovim/.config/gocode/*
+neovim/.config/nvim/spell/*
 chef/
 private
 venv

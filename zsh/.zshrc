@@ -1,8 +1,6 @@
 source $HOME/.bash_profile
 # source $HOME/.web_utils.sh
 source $HOME/.env
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
 
 autoload -U promptinit; promptinit
 prompt pure
@@ -106,3 +104,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export PATH="$HOME/.yarn/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash

@@ -81,6 +81,7 @@ Plug 'rdnetto/YCM-Generator'
 
 " Go
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " HTML
 Plug 'hail2u/vim-css3-syntax'
@@ -349,7 +350,8 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " deoplete
-call deoplete#enable()
+let g:deoplete#enable_at_startup = 1
+set completeopt+=noselect
 
 " snippets
 function! g:UltiSnips_Complete()

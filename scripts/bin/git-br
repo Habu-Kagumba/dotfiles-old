@@ -2,7 +2,7 @@
 
 set -e
 
-old=$(git current-branch)
+old=$(git rev-parse --abbrev-ref HEAD)
 git branch -m "$old" "$1"
 git push origin --set-upstream "$1"
 git push origin --delete "$old"

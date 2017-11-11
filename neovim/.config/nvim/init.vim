@@ -109,7 +109,6 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'tpope/vim-rails'
 
 " Templating
-Plug 'shime/vim-livedown'
 Plug 'tmhedberg/matchit'
 
 " Scala

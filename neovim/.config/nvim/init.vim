@@ -40,7 +40,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'ryanoasis/vim-devicons'
 Plug 'EinfachToll/DidYouMean'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

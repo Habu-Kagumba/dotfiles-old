@@ -45,6 +45,7 @@ Plug 'EinfachToll/DidYouMean'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
+Plug 'editorconfig/editorconfig-vim'
 
 let g:make = 'gmake'
 if exists('make')

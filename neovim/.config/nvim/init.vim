@@ -95,7 +95,6 @@ Plug 'ternjs/tern_for_vim'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
-Plug 'mklabs/jscs.vim', { 'do': 'yarn global add jscs' }
 Plug 'moll/vim-node'
 
 " Python
@@ -538,18 +537,12 @@ let g:neomake_error_sign = {
 
 " javascript
 let g:neomake_javascript_eslint_maker = {
-    \ 'exe': 'eslint',
+    \ 'exe': 'eslint_d',
     \ 'args': ['--env', 'es6', '-f', 'compact'],
     \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
     \ }
 
-let g:neomake_javascript_jscs_maker = {
-    \ 'exe': 'jscs',
-    \ 'args': ['--preset', 'airbnb', '--reporter', 'inline'],
-    \ 'errorformat': '%f: line %l\, col %c\, %m',
-    \ }
-
-let g:neomake_javascript_enabled_makers = ['eslint', 'jscs']
+let g:neomake_javascript_enabled_makers = ['eslint_d']
 let g:neomake_open_list = 2
 
 let g:javascript_enable_domhtmlcss = 1

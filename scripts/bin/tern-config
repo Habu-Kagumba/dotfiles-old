@@ -2,17 +2,17 @@
 
 content="
 {
-  "plugins": {
-    "es_modules": {},
-    "node": {}
+  \"plugins\": {
+    \"es_modules\": {},
+    \"node\": {}
   },
-  "libs": [
-    "ecma5",
-    "ecma6",
-    "browser",
-    "jquery"
+  \"libs\": [
+    \"ecma5\",
+    \"ecma6\",
+    \"browser\",
+    \"jquery\"
   ],
-  "ecmaVersion": 6
+  \"ecmaVersion\": 6
 }
 "
 

@@ -11,7 +11,7 @@ export PATH="$ANDROID_HOME/tools:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
-export GOPATH="$HOME/dev/go-code"
+export GOPATH="$HOME/Dev/Go-code"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
@@ -104,3 +104,6 @@ export PATH="$HOME/.yarn/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
+
+# added by travis gem
+[ -f /Users/habu/.travis/travis.sh ] && source /Users/habu/.travis/travis.sh
